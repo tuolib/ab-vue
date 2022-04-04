@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ab ui",
   "keywords": [
     "vue3",
@@ -45,5 +45,10 @@
     "vue-tsc": "^0.29.8"
   },
   "license": "ISC",
-  "author": "Ham"
+  "author": "Ham",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuolib/ab-vue.git",
+    "directory": "src"
+  }
 }
