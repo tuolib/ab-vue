@@ -1,7 +1,8 @@
 // rollup.config.js
 import fs from 'fs';
 import path from 'path';
-import vue from 'rollup-plugin-vue';
+// import vue from 'rollup-plugin-vue';
+import vue from '@vitejs/plugin-vue'
 import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -46,6 +47,9 @@ const baseConfig = {
       'process.env.NODE_ENV': JSON.stringify('production'),
     },
     vue: {
+      isProduction: true,
+      customElement: true,
+      reactivityTransform: true,
     },
     postVue: [
       resolve({
