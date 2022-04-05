@@ -1,5 +1,5 @@
 import Button from "./Button.vue"
-// import {App} from "vue";
+import { App } from "vue";
 // export type {
 //   ButtonType,
 //   ButtonSize,
@@ -7,8 +7,8 @@ import Button from "./Button.vue"
 //   ButtonIconPosition,
 // } from './types';
 
-// Button.install = (app) => {
-//   app.component(Button.name, Button)
-// }
+Button.install = (app: App) => {
+  app.component(Button.name, Button)
+}
 
 export default Button;

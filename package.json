@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.22",
+  "version": "0.0.29",
   "description": "",
   "main": "dist/cjs/entry.js",
   "browser": "dist/es/entry.esm.js",
@@ -10,6 +10,8 @@
   "jsdelivr": "dist/ab-vue.min.js",
   "files": [
     "dist/*",
+    "es",
+    "cjs",
     "src/**/*.vue"
   ],
   "exports": {
@@ -22,17 +24,37 @@
       "require": "./dist/cjs/entry.js",
       "types": "./dist/types/src/entry.esm.d.ts"
     },
+    "./es": "./dist/es/entry.esm.js",
+    "./cjs": "./dist/cjs/entry.js",
+    "./es/": "./es/",
+    "./cjs/": "./cjs/",
     "./package.json": "./package.json"
   },
-  "sideEffects": false,
+  "sideEffects": [
+    "dist/es/lib-components/**/*.css",
+    "dist/cjs/lib-components/**/*.css",
+    "*.css",
+    "*.less"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.ts",
     "prebuild": "rimraf ./dist",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js && cpx \"src/lib-components/**/*.css\" dist/es/lib-components  && cpx \"src/lib-components/**/*.css\" dist/cjs/lib-components",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
     "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts"
+  },
+  "dependencies": {
+    "@vue/runtime-core": "^3.2.31",
+    "@vue/shared": "^3.2.31",
+    "vue": "^3.2.31"
+  },
+  "peerDependencies": {
+    "@vue/compiler-sfc": "^3.0.11",
+    "@vue/runtime-core": "^3.2.31",
+    "@vue/shared": "^3.2.31",
+    "vue": "^3.2.31"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -43,12 +65,13 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-replace": "^2.4.2",
+    "@rollup/plugin-typescript": "^8.3.1",
     "@types/node": "^17.0.23",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-typescript": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
-    "@vue/compiler-sfc": "^3.0.11",
     "@zerollup/ts-transform-paths": "^1.7.18",
+    "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
     "postcss": "^8.2.10",
@@ -61,14 +84,14 @@
     "rollup-plugin-vue": "^6.0.0",
     "ts-node": "^10.7.0",
     "ttypescript": "^1.5.12",
-    "typescript": "^4.6.3",
-    "vue": "^3.0.5"
-  },
-  "peerDependencies": {
-    "vue": "^3.0.5"
+    "typescript": "^4.6.3"
   },
   "engines": {
     "node": ">=12"
   },
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuolib/ab-vue.git",
+    "directory": "src"
+  }
 }

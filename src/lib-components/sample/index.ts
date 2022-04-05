@@ -1,2 +1,2 @@
-import Tag from './ab-vue-sample.vue';
-export default Tag
+import Sample from './ab-vue-sample.vue';
+export default Sample

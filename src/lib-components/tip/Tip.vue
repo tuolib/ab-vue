@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import './tip.css'
+// import './tip.css'
 export default defineComponent({
   name: 'Tip',
 

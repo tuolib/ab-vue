@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import './button.css'
+// import './button.css'
 // Types
 // import { ButtonSize, ButtonType, ButtonNativeType, ButtonIconPosition } from './types';
 export default defineComponent({
