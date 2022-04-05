@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.3",
+  "version": "0.0.15",
   "description": "ab ui",
   "keywords": [
     "vue3",
@@ -10,12 +10,12 @@
     "lib/**/*"
   ],
   "types": "./lib/index.d.ts",
-  "main": "./lib/abu.umd.js",
-  "module": "./lib/abu.es.js",
+  "main": "./lib/ab-vue.umd.js",
+  "module": "./lib/ab-vue.es.js",
   "exports": {
     ".": {
-      "import": "./lib/abu.es.js",
-      "require": "./lib/abu.umd.js",
+      "import": "./lib/ab-vue.es.js",
+      "require": "./lib/ab-vue.umd.js",
       "types": "./lib/index.d.ts"
     }
   },

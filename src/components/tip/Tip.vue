@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Button',
+  name: 'Tip',
 
   props: {},
 
@@ -12,5 +12,5 @@ export default defineComponent({
 });
 </script>
 <template>
-  <div>button</div>
+  <div>Tip.vue</div>
 </template>
