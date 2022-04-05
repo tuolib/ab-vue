@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-
+import './tag.css'
 export default defineComponent({
   name: 'Tag',
 
@@ -8,9 +8,9 @@ export default defineComponent({
 
   emits: ['click'],
 
-  setup(props, { emit, slots }) {},
+  setup() {},
 });
 </script>
 <template>
-  <div>Tag</div>
+  <div class="tag">TagTagTagTagTagTagTagTagTagTagTagTagTagTag</div>
 </template>

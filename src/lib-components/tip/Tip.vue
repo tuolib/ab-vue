@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-
+import './tip.css'
 export default defineComponent({
   name: 'Tip',
 
@@ -8,9 +8,9 @@ export default defineComponent({
 
   emits: ['click'],
 
-  setup(props, { emit, slots }) {},
+  setup() {},
 });
 </script>
 <template>
-  <div>Tip.vue</div>
+  <div class="tip">Tip.vueTipTipTipTipTipTipTipTipTipTipTipTipTipTipTip</div>
 </template>
