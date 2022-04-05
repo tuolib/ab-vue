@@ -15,6 +15,7 @@ import typescript from 'rollup-plugin-typescript2';
 import minimist from 'minimist';
 import multiInput from 'rollup-plugin-multi-input';
 import typescriptPlugin from '@rollup/plugin-typescript';
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs.readFileSync('./.browserslistrc')
@@ -132,6 +133,7 @@ if (!argv.format || argv.format === 'es') {
       }),
       // multiInput(),
       // typescriptPlugin(),
+      vueJsx(),
     ],
   };
   buildFormats.push(esConfig);
@@ -159,6 +161,7 @@ if (!argv.format || argv.format === 'cjs') {
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
       // typescriptPlugin(),
+      vueJsx(),
     ],
   };
   buildFormats.push(umdConfig);
@@ -188,6 +191,7 @@ if (!argv.format || argv.format === 'iife') {
         },
       }),
       // typescriptPlugin(),
+      vueJsx(),
     ],
   };
   buildFormats.push(unpkgConfig);
