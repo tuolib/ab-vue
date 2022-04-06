@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  import './step.css';
-  export default defineComponent({
-    name: 'Step',
+import { defineComponent, ref } from 'vue';
+import './step.css';
+export default defineComponent({
+  name: 'Step',
 
-    props: {},
+  props: {},
 
-    emits: ['click'],
+  emits: ['click'],
 
-    setup() {
-      const name = ref('');
-      name.value = 'step11';
-      return {
-        name,
-      };
-    },
-  });
+  setup() {
+    const name = ref('');
+    name.value = 'step11';
+    return {
+      name,
+    };
+  },
+});
 </script>
 <template>
   <div class="step">

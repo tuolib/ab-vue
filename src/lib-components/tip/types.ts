@@ -1,7 +1,1 @@
-
-export type TipType =
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'warning'
-  | 'danger';
+export type TipType = 'default' | 'primary' | 'success' | 'warning' | 'danger';

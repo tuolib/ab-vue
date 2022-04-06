@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { defineComponent } from 'vue';
-  // import './button.css'
-  // Types
-  // import { ButtonSize, ButtonType, ButtonNativeType, ButtonIconPosition } from './types';
-  export default defineComponent({
-    name: 'Button',
+import { defineComponent } from 'vue';
+// import './button.css'
+// Types
+// import { ButtonSize, ButtonType, ButtonNativeType, ButtonIconPosition } from './types';
+export default defineComponent({
+  name: 'Button',
 
-    props: {},
+  props: {},
 
-    emits: ['click'],
+  emits: ['click'],
 
-    setup() {},
-  });
+  setup() {},
+});
 </script>
 <template>
   <div class="button"
