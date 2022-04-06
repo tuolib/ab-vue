@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="ab-loading ab-loading--circular">
+    <span class="ab-loading__spinner ab-loading__spinner--circular">
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+  </div>
+  <div class="ab-loading ab-loading--spinner">
+    <span class="ab-loading__spinner ab-loading__spinner--spinner">
+      <i class="ab-loading__line ab-loading__line--1">
+      </i>
+      <i class="ab-loading__line ab-loading__line--2">
+      </i>
+      <i class="ab-loading__line ab-loading__line--3">
+      </i>
+      <i class="ab-loading__line ab-loading__line--4">
+      </i>
+      <i class="ab-loading__line ab-loading__line--5">
+      </i>
+      <i class="ab-loading__line ab-loading__line--6">
+      </i>
+      <i class="ab-loading__line ab-loading__line--7">
+      </i>
+      <i class="ab-loading__line ab-loading__line--8">
+      </i>
+      <i class="ab-loading__line ab-loading__line--9">
+      </i>
+      <i class="ab-loading__line ab-loading__line--10">
+      </i>
+      <i class="ab-loading__line ab-loading__line--11">
+      </i>
+      <i class="ab-loading__line ab-loading__line--12">
+      </i>
+    </span>
+  </div>
+</div>
+<div>
+  <div class="ab-loading ab-loading--circular">
+    <span class="ab-loading__spinner ab-loading__spinner--circular"
+          style="color: rgb(25, 137, 250);"
+    >
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+  </div>
+  <div class="ab-loading ab-loading--spinner">
+    <span class="ab-loading__spinner ab-loading__spinner--spinner"
+          style="color: rgb(25, 137, 250);"
+    >
+      <i class="ab-loading__line ab-loading__line--1">
+      </i>
+      <i class="ab-loading__line ab-loading__line--2">
+      </i>
+      <i class="ab-loading__line ab-loading__line--3">
+      </i>
+      <i class="ab-loading__line ab-loading__line--4">
+      </i>
+      <i class="ab-loading__line ab-loading__line--5">
+      </i>
+      <i class="ab-loading__line ab-loading__line--6">
+      </i>
+      <i class="ab-loading__line ab-loading__line--7">
+      </i>
+      <i class="ab-loading__line ab-loading__line--8">
+      </i>
+      <i class="ab-loading__line ab-loading__line--9">
+      </i>
+      <i class="ab-loading__line ab-loading__line--10">
+      </i>
+      <i class="ab-loading__line ab-loading__line--11">
+      </i>
+      <i class="ab-loading__line ab-loading__line--12">
+      </i>
+    </span>
+  </div>
+</div>
+<div>
+  <div class="ab-loading ab-loading--circular">
+    <span class="ab-loading__spinner ab-loading__spinner--circular"
+          style="width: 24px; height: 24px;"
+    >
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+  </div>
+  <div class="ab-loading ab-loading--spinner">
+    <span class="ab-loading__spinner ab-loading__spinner--spinner"
+          style="width: 24px; height: 24px;"
+    >
+      <i class="ab-loading__line ab-loading__line--1">
+      </i>
+      <i class="ab-loading__line ab-loading__line--2">
+      </i>
+      <i class="ab-loading__line ab-loading__line--3">
+      </i>
+      <i class="ab-loading__line ab-loading__line--4">
+      </i>
+      <i class="ab-loading__line ab-loading__line--5">
+      </i>
+      <i class="ab-loading__line ab-loading__line--6">
+      </i>
+      <i class="ab-loading__line ab-loading__line--7">
+      </i>
+      <i class="ab-loading__line ab-loading__line--8">
+      </i>
+      <i class="ab-loading__line ab-loading__line--9">
+      </i>
+      <i class="ab-loading__line ab-loading__line--10">
+      </i>
+      <i class="ab-loading__line ab-loading__line--11">
+      </i>
+      <i class="ab-loading__line ab-loading__line--12">
+      </i>
+    </span>
+  </div>
+</div>
+<div>
+  <div class="ab-loading ab-loading--circular">
+    <span class="ab-loading__spinner ab-loading__spinner--circular"
+          style="width: 24px; height: 24px;"
+    >
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="ab-loading__text">
+      Loading...
+    </span>
+  </div>
+</div>
+<div>
+  <div class="ab-loading ab-loading--circular ab-loading--vertical">
+    <span class="ab-loading__spinner ab-loading__spinner--circular"
+          style="width: 24px; height: 24px;"
+    >
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="ab-loading__text">
+      Loading...
+    </span>
+  </div>
+</div>
+<div>
+  <div class="ab-loading ab-loading--circular ab-loading--vertical">
+    <span class="ab-loading__spinner ab-loading__spinner--circular"
+          style="color: rgb(0, 148, 255); width: 24px; height: 24px;"
+    >
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="ab-loading__text"
+          style="color: rgb(0, 148, 255);"
+    >
+      Loading...
+    </span>
+  </div>
+  <div class="ab-loading ab-loading--circular ab-loading--vertical">
+    <span class="ab-loading__spinner ab-loading__spinner--circular"
+          style="width: 24px; height: 24px;"
+    >
+      <svg class="ab-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="ab-loading__text"
+          style="color: rgb(0, 148, 255);"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;
