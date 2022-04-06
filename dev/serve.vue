@@ -13,6 +13,6 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <ab-vue3-sample />
+    <Sample />
   </div>
 </template>

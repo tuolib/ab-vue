@@ -1,3 +1,3 @@
-import Tip from "./Tip"
+import Tip from './Tip';
 
-export default Tip
+export default Tip;
