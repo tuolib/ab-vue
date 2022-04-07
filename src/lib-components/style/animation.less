@@ -1,52 +1,52 @@
-@keyframes ab-slide-up-enter {
+@keyframes abv-slide-up-enter {
   from {
     transform: translate3d(0, 100%, 0);
   }
 }
 
-@keyframes ab-slide-up-leave {
+@keyframes abv-slide-up-leave {
   to {
     transform: translate3d(0, 100%, 0);
   }
 }
 
-@keyframes ab-slide-down-enter {
+@keyframes abv-slide-down-enter {
   from {
     transform: translate3d(0, -100%, 0);
   }
 }
 
-@keyframes ab-slide-down-leave {
+@keyframes abv-slide-down-leave {
   to {
     transform: translate3d(0, -100%, 0);
   }
 }
 
-@keyframes ab-slide-left-enter {
+@keyframes abv-slide-left-enter {
   from {
     transform: translate3d(-100%, 0, 0);
   }
 }
 
-@keyframes ab-slide-left-leave {
+@keyframes abv-slide-left-leave {
   to {
     transform: translate3d(-100%, 0, 0);
   }
 }
 
-@keyframes ab-slide-right-enter {
+@keyframes abv-slide-right-enter {
   from {
     transform: translate3d(100%, 0, 0);
   }
 }
 
-@keyframes ab-slide-right-leave {
+@keyframes abv-slide-right-leave {
   to {
     transform: translate3d(100%, 0, 0);
   }
 }
 
-@keyframes ab-fade-in {
+@keyframes abv-fade-in {
   from {
     opacity: 0;
   }
@@ -56,7 +56,7 @@
   }
 }
 
-@keyframes ab-fade-out {
+@keyframes abv-fade-out {
   from {
     opacity: 1;
   }
@@ -66,7 +66,7 @@
   }
 }
 
-@keyframes ab-rotate {
+@keyframes abv-rotate {
   from {
     transform: rotate(0deg);
   }
@@ -76,60 +76,60 @@
   }
 }
 
-.ab-fade {
+.abv-fade {
   &-enter-active {
-    animation: var(--ab-duration-base) ab-fade-in both var(--ab-ease-out);
+    animation: var(--abv-duration-base) abv-fade-in both var(--abv-ease-out);
   }
 
   &-leave-active {
-    animation: var(--ab-duration-base) ab-fade-out both var(--ab-ease-in);
+    animation: var(--abv-duration-base) abv-fade-out both var(--abv-ease-in);
   }
 }
 
-.ab-slide-up {
+.abv-slide-up {
   &-enter-active {
-    animation: ab-slide-up-enter var(--ab-duration-base) both
-      var(--ab-ease-out);
+    animation: abv-slide-up-enter var(--abv-duration-base) both
+      var(--abv-ease-out);
   }
 
   &-leave-active {
-    animation: ab-slide-up-leave var(--ab-duration-base) both
-      var(--ab-ease-in);
+    animation: abv-slide-up-leave var(--abv-duration-base) both
+      var(--abv-ease-in);
   }
 }
 
-.ab-slide-down {
+.abv-slide-down {
   &-enter-active {
-    animation: ab-slide-down-enter var(--ab-duration-base) both
-      var(--ab-ease-out);
+    animation: abv-slide-down-enter var(--abv-duration-base) both
+      var(--abv-ease-out);
   }
 
   &-leave-active {
-    animation: ab-slide-down-leave var(--ab-duration-base) both
-      var(--ab-ease-in);
+    animation: abv-slide-down-leave var(--abv-duration-base) both
+      var(--abv-ease-in);
   }
 }
 
-.ab-slide-left {
+.abv-slide-left {
   &-enter-active {
-    animation: ab-slide-left-enter var(--ab-duration-base) both
-      var(--ab-ease-out);
+    animation: abv-slide-left-enter var(--abv-duration-base) both
+      var(--abv-ease-out);
   }
 
   &-leave-active {
-    animation: ab-slide-left-leave var(--ab-duration-base) both
-      var(--ab-ease-in);
+    animation: abv-slide-left-leave var(--abv-duration-base) both
+      var(--abv-ease-in);
   }
 }
 
-.ab-slide-right {
+.abv-slide-right {
   &-enter-active {
-    animation: ab-slide-right-enter var(--ab-duration-base) both
-      var(--ab-ease-out);
+    animation: abv-slide-right-enter var(--abv-duration-base) both
+      var(--abv-ease-out);
   }
 
   &-leave-active {
-    animation: ab-slide-right-leave var(--ab-duration-base) both
-      var(--ab-ease-in);
+    animation: abv-slide-right-leave var(--abv-duration-base) both
+      var(--abv-ease-in);
   }
 }

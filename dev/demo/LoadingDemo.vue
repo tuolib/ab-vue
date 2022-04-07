@@ -17,7 +17,7 @@ export default defineComponent({
 @import "../../src/lib-components/loading/index.less";
 
 .demo-loading {
-  .ab-loading {
+  .abv-loading {
     display: inline-block;
     margin: 5px 0 5px 20px;
 

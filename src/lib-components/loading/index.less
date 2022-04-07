@@ -1,27 +1,27 @@
 body {
-  --ab-loading-text-color: var(--ab-text-color-2);
-  --ab-loading-text-font-size: var(--ab-font-size-md);
-  --ab-loading-spinner-color: var(--ab-gray-5);
-  --ab-loading-spinner-size: 30px;
-  --ab-loading-spinner-duration: 0.8s;
+  --abv-loading-text-color: var(--abv-text-color-2);
+  --abv-loading-text-font-size: var(--abv-font-size-md);
+  --abv-loading-spinner-color: var(--abv-gray-5);
+  --abv-loading-spinner-size: 30px;
+  --abv-loading-spinner-duration: 0.8s;
 }
 
-.ab-loading {
+.abv-loading {
   position: relative;
-  color: var(--ab-loading-spinner-color);
+  color: var(--abv-loading-spinner-color);
   font-size: 0;
   vertical-align: middle;
 
   &__spinner {
     position: relative;
     display: inline-block;
-    width: var(--ab-loading-spinner-size);
+    width: var(--abv-loading-spinner-size);
     // compatible for 1.x, users may set width or height in root element
     max-width: 100%;
-    height: var(--ab-loading-spinner-size);
+    height: var(--abv-loading-spinner-size);
     max-height: 100%;
     vertical-align: middle;
-    animation: ab-rotate var(--ab-loading-spinner-duration) linear infinite;
+    animation: abv-rotate var(--abv-loading-spinner-duration) linear infinite;
 
     &--spinner {
       animation-timing-function: steps(12);
@@ -56,7 +56,7 @@ body {
     height: 100%;
 
     circle {
-      animation: ab-circular 1.5s ease-in-out infinite;
+      animation: abv-circular 1.5s ease-in-out infinite;
       stroke: currentColor;
       stroke-width: 3;
       stroke-linecap: round;
@@ -65,9 +65,9 @@ body {
 
   &__text {
     display: inline-block;
-    margin-left: var(--ab-padding-xs);
-    color: var(--ab-loading-text-color);
-    font-size: var(--ab-loading-text-font-size);
+    margin-left: var(--abv-padding-xs);
+    color: var(--abv-loading-text-color);
+    font-size: var(--abv-loading-text-font-size);
     vertical-align: middle;
   }
 
@@ -76,13 +76,13 @@ body {
     flex-direction: column;
     align-items: center;
 
-    .ab-loading__text {
-      margin: var(--ab-padding-xs) 0 0;
+    .abv-loading__text {
+      margin: var(--abv-padding-xs) 0 0;
     }
   }
 }
 
-@keyframes ab-circular {
+@keyframes abv-circular {
   0% {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
@@ -100,7 +100,7 @@ body {
 }
 
 .generate-spinner(@n, @i: 1) when (@i =< @n) {
-  .ab-loading__line--@{i} {
+  .abv-loading__line--@{i} {
     transform: rotate(@i * 30deg);
     opacity: 1 - (0.75 / 12) * (@i - 1);
   }
