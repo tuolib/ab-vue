@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "",
   "main": "dist/cjs/entry.js",
   "browser": "dist/es/entry.esm.js",
