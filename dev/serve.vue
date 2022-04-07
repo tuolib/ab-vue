@@ -4,7 +4,7 @@ import { defineComponent } from 'vue';
 // import { AbVue3Sample } from '@/entry.esm';
 // import LoadingDemo from './demo/LoadingDemo.vue';
 import LoadingDemo from '../src/lib-components/loading/demo/index.vue';
-import LinkQuick from '../src/lib-components/link-quick/LinkQuick.vue';
+import LinkQuick from '../src/lib-components/link-quick/index';
 
 export default defineComponent({
   name: 'ServeDev',

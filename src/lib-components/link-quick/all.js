@@ -14,8 +14,8 @@
  * limitations under the License.
  **/
 import throttle from 'throttles';
-import {priority, supported} from './prefetch.mjs';
-import requestIdleCallback from './request-idle-callback.mjs';
+import {priority, supported} from './prefetch.js';
+import requestIdleCallback from './request-idle-callback.js';
 
 // Cache of URLs we've prefetched
 // Its `size` is compared against `opts.limit` value.
