@@ -4,13 +4,15 @@ import { defineComponent } from 'vue';
 // import { AbVue3Sample } from '@/entry.esm';
 // import LoadingDemo from './demo/LoadingDemo.vue';
 import LoadingDemo from '../src/lib-components/loading/demo/index.vue';
+import LinkQuick from '../src/lib-components/link-quick/LinkQuick.vue';
 
 export default defineComponent({
   name: 'ServeDev',
   components: {
     // AbVue3Sample,
     // LoadingDemo,
-    LoadingDemo
+    LoadingDemo,
+    LinkQuick,
   },
 });
 </script>
@@ -18,6 +20,9 @@ export default defineComponent({
 <template>
   <div id="app">
     <LoadingDemo />
+    <LinkQuick :options="{origins: []}">
+      <a href="https://dockergene.com">123</a>
+    </LinkQuick>
   </div>
 </template>
 <style lang="less">

@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "",
   "main": "dist/cjs/entry.js",
   "browser": "dist/es/entry.esm.js",
@@ -52,6 +52,8 @@
     "@vant/use": "^1.3.6",
     "@vue/runtime-core": "^3.2.31",
     "@vue/shared": "^3.2.31",
+    "quicklink": "^2.2.0",
+    "throttles": "^1.0.1",
     "vue": "^3.2.31"
   },
   "peerDependencies": {
