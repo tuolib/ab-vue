@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import '../index.less';
 import { useTranslate } from '../../utils/use-translate';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
 import Cell from '../../cell';
+import '../../cell/index.less';
+
 const t = useTranslate({
   'zh-CN': {
     fail: '失败提示',
