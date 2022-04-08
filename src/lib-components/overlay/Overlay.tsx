@@ -1,10 +1,5 @@
-import {
-  Transition,
-  defineComponent,
-  type PropType,
-  type CSSProperties,
-  type ExtractPropTypes,
-} from 'vue';
+import { Transition, defineComponent } from 'vue';
+import type { PropType, CSSProperties, ExtractPropTypes } from 'vue';
 import {
   noop,
   isDef,

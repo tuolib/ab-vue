@@ -1,0 +1,140 @@
+body {
+  --abv-dialog-width: 320px;
+  --abv-dialog-small-screen-width: 90%;
+  --abv-dialog-font-size: var(--abv-font-size-lg);
+  --abv-dialog-transition: var(--abv-duration-base);
+  --abv-dialog-radius: 16px;
+  --abv-dialog-background: var(--abv-background-2);
+  --abv-dialog-header-font-weight: var(--abv-font-bold);
+  --abv-dialog-header-line-height: 24px;
+  --abv-dialog-header-padding-top: 26px;
+  --abv-dialog-header-isolated-padding: var(--abv-padding-lg) 0;
+  --abv-dialog-message-padding: var(--abv-padding-lg);
+  --abv-dialog-message-font-size: var(--abv-font-size-md);
+  --abv-dialog-message-line-height: var(--abv-line-height-md);
+  --abv-dialog-message-max-height: 60vh;
+  --abv-dialog-has-title-message-text-color: var(--abv-gray-7);
+  --abv-dialog-has-title-message-padding-top: var(--abv-padding-xs);
+  --abv-dialog-button-height: 48px;
+  --abv-dialog-round-button-height: 36px;
+  --abv-dialog-confirm-button-text-color: var(--abv-primary-color);
+}
+
+.abv-dialog {
+  top: 45%;
+  left: 50%;
+  width: var(--abv-dialog-width);
+  overflow: hidden;
+  font-size: var(--abv-dialog-font-size);
+  background: var(--abv-dialog-background);
+  border-radius: var(--abv-dialog-radius);
+  backface-visibility: hidden; // avoid blurry text after scale animation
+  transition: var(--abv-dialog-transition);
+  transition-property: transform, opacity;
+
+  @media (max-width: 321px) {
+    width: var(--abv-dialog-small-screen-width);
+  }
+
+  &__header {
+    color: var(--abv-text-color);
+    padding-top: var(--abv-dialog-header-padding-top);
+    font-weight: var(--abv-dialog-header-font-weight);
+    line-height: var(--abv-dialog-header-line-height);
+    text-align: center;
+
+    &--isolated {
+      padding: var(--abv-dialog-header-isolated-padding);
+    }
+  }
+
+  &__content {
+    &--isolated {
+      display: flex;
+      align-items: center;
+      min-height: 104px;
+    }
+  }
+
+  &__message {
+    color: var(--abv-text-color);
+    flex: 1;
+    max-height: var(--abv-dialog-message-max-height);
+    padding: 26px var(--abv-dialog-message-padding);
+    overflow-y: auto;
+    font-size: var(--abv-dialog-message-font-size);
+    line-height: var(--abv-dialog-message-line-height);
+
+    // allow newline character
+    white-space: pre-wrap;
+    text-align: center;
+    word-wrap: break-word;
+    -webkit-overflow-scrolling: touch;
+
+    &--has-title {
+      padding-top: var(--abv-dialog-has-title-message-padding-top);
+      color: var(--abv-dialog-has-title-message-text-color);
+    }
+
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  &__confirm,
+  &__cancel {
+    flex: 1;
+    height: var(--abv-dialog-button-height);
+    margin: 0;
+    border: 0;
+  }
+
+  &__confirm {
+    &,
+    &:active {
+      color: var(--abv-dialog-confirm-button-text-color);
+    }
+  }
+
+  &--round-button {
+    .abv-dialog__footer {
+      position: relative;
+      height: auto;
+      padding: var(--abv-padding-xs) var(--abv-padding-lg) var(--abv-padding-md);
+    }
+
+    .abv-dialog__message {
+      padding-bottom: var(--abv-padding-md);
+      color: var(--abv-text-color);
+    }
+
+    .abv-dialog__confirm,
+    .abv-dialog__cancel {
+      height: var(--abv-dialog-round-button-height);
+    }
+
+    .abv-dialog__confirm {
+      color: var(--abv-white);
+    }
+  }
+
+  &-bounce-enter-from {
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+    opacity: 0;
+  }
+
+  &-bounce-leave-active {
+    transform: translate3d(-50%, -50%, 0) scale(0.9);
+    opacity: 0;
+  }
+}

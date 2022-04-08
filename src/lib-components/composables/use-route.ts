@@ -1,12 +1,8 @@
 /**
  * Vue Router support
  */
-import {
-  getCurrentInstance,
-  type PropType,
-  type ExtractPropTypes,
-  type ComponentPublicInstance,
-} from 'vue';
+import { getCurrentInstance } from 'vue';
+import type { PropType, ExtractPropTypes, ComponentPublicInstance } from 'vue';
 import type { RouteLocationRaw } from 'vue-router';
 
 export const routeProps = {

@@ -1,0 +1,38 @@
+body {
+  --abv-action-bar-button-height: 40px;
+  --abv-action-bar-button-warning-color: var(--abv-gradient-orange);
+  --abv-action-bar-button-danger-color: var(--abv-gradient-red);
+}
+
+.abv-action-bar-button {
+  flex: 1;
+  height: var(--abv-action-bar-button-height);
+  font-weight: var(--abv-font-bold);
+  font-size: var(--abv-font-size-md);
+  border: none;
+  border-radius: 0;
+
+  &--first {
+    margin-left: 5px;
+    border-top-left-radius: var(--abv-radius-max);
+    border-bottom-left-radius: var(--abv-radius-max);
+  }
+
+  &--last {
+    margin-right: 5px;
+    border-top-right-radius: var(--abv-radius-max);
+    border-bottom-right-radius: var(--abv-radius-max);
+  }
+
+  &--warning {
+    background: var(--abv-action-bar-button-warning-color);
+  }
+
+  &--danger {
+    background: var(--abv-action-bar-button-danger-color);
+  }
+
+  @media (max-width: 321px) {
+    font-size: 13px;
+  }
+}

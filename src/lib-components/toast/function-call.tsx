@@ -1,6 +1,7 @@
 import { ref, watch, getCurrentInstance } from 'vue';
 // import type { App } from 'vue';
-import { extend, isObject, inBrowser, type ComponentInstance } from '../utils';
+import { extend, isObject, inBrowser } from '../utils';
+import type { ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import AbvToast from './Toast';
 import type { ToastType, ToastOptions } from './types';

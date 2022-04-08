@@ -1,5 +1,5 @@
-import { inBrowser, type Numeric } from './basic';
-
+import { inBrowser } from './basic';
+import type { Numeric } from './basic';
 export const isDef = <T>(val: T): val is NonNullable<T> => val !== undefined && val !== null;
 
 // eslint-disable-next-line @typescript-eslint/ban-types

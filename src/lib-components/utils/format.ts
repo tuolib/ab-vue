@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'vue';
-import { inBrowser, type Numeric } from './basic';
+import { inBrowser } from './basic';
+import type { Numeric } from './basic';
 import { windowWidth, windowHeight } from './dom';
 import { isDef, isNumeric } from './validate';
 

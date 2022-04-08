@@ -1,5 +1,5 @@
 export { default as Sample } from './sample/ab-vue-sample.vue';
-export { default as Button } from './button/Button.vue';
+export { default as Button } from './button';
 export { default as Tip } from './tip';
 export { default as Tag } from './tag/Tag.vue';
 export { default as Step } from './step';

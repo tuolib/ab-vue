@@ -15,6 +15,9 @@ import '../src/lib-components/popup/style/index';
 import ToastDemo from '../src/lib-components/toast/demo/index.vue';
 import '../src/lib-components/toast/style/index';
 
+import DialogDemo from '../src/lib-components/dialog/demo/index.vue';
+import '../src/lib-components/dialog/style/index';
+
 export default defineComponent({
   name: 'ServeDev',
   components: {
@@ -24,6 +27,7 @@ export default defineComponent({
     LinkQuick,
     ToastDemo,
     PopupDemo,
+    DialogDemo,
   },
 });
 </script>
@@ -41,6 +45,10 @@ export default defineComponent({
     <div class="blockDemo">
       <div class="demoTitle">Popup 例子：</div>
       <PopupDemo />
+    </div>
+    <div class="blockDemo">
+      <div class="demoTitle">dialog 例子：</div>
+      <DialogDemo />
     </div>
   </div>
 </template>
