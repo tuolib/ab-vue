@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import VanCell from '../../cell';
-import { cdnURL, useTranslate } from '../../../docs/site';
+import '../index.less';
+import { useTranslate } from '../../utils/use-translate';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
-
+import Cell from '../../cell';
 const t = useTranslate({
   'zh-CN': {
     fail: '失败提示',
@@ -83,7 +83,7 @@ const showIconToast = () => {
 const showImageToast = () => {
   Toast({
     message: t('customImage'),
-    icon: cdnURL('logo.png'),
+    // icon: cdnURL('logo.png'),
   });
 };
 
@@ -108,33 +108,25 @@ const showCustomizedToast = () => {
 </script>
 
 <template>
-  <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :title="t('title1')" @click="Toast(t('text'))" />
-    <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
-    <van-cell is-link :title="t('success')" @click="showSuccessToast" />
-    <van-cell is-link :title="t('fail')" @click="showFailToast" />
-  </demo-block>
+  <div card :title="t('basicUsage')">
+    <Cell is-link :title="t('title1')" @click="Toast(t('text'))" />
+    <Cell is-link :title="t('title2')" @click="showLoadingToast()" />
+    <Cell is-link :title="t('success')" @click="showSuccessToast" />
+    <Cell is-link :title="t('fail')" @click="showFailToast" />
+  </div>
 
-  <demo-block card :title="t('customIcon')">
-    <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
-    <van-cell is-link :title="t('customImage')" @click="showImageToast" />
-    <van-cell
-      is-link
-      :title="t('loadingType')"
-      @click="showLoadingToast('spinner')"
-    />
-  </demo-block>
+  <div card :title="t('customIcon')">
+    <Cell is-link :title="t('customIcon')" @click="showIconToast" />
+    <Cell is-link :title="t('customImage')" @click="showImageToast" />
+    <Cell is-link :title="t('loadingType')" @click="showLoadingToast('spinner')" />
+  </div>
 
-  <demo-block card :title="t('customPosition')">
-    <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
-    <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
-  </demo-block>
+  <div card :title="t('customPosition')">
+    <Cell is-link :title="t('positionTop')" @click="showTopToast" />
+    <Cell is-link :title="t('positionBottom')" @click="showBottomToast" />
+  </div>
 
-  <demo-block card :title="t('updateMessage')">
-    <van-cell
-      is-link
-      :title="t('updateMessage')"
-      @click="showCustomizedToast"
-    />
-  </demo-block>
+  <div card :title="t('updateMessage')">
+    <Cell is-link :title="t('updateMessage')" @click="showCustomizedToast" />
+  </div>
 </template>

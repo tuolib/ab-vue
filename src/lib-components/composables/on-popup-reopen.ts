@@ -7,7 +7,7 @@ export function onPopupReopen(callback: () => void) {
   const popupToggleStatus = inject(POPUP_TOGGLE_KEY, null);
 
   if (popupToggleStatus) {
-    watch(popupToggleStatus, (show) => {
+    watch(popupToggleStatus, show => {
       if (show) {
         callback();
       }

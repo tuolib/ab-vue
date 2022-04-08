@@ -14,18 +14,9 @@ export default {
     end: 'শেষ',
     start: 'শুরু',
     title: 'ক্যালেন্ডার',
-    weekdays: [
-      'রবিবার',
-      'সোমবার',
-      'মঙ্গলবার',
-      'বুধবার',
-      'বৃহস্পতিবার',
-      'শুক্রবার',
-      'শনিবার',
-    ],
+    weekdays: ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: number) =>
-      `${maxRange} দিনের বেশি নির্বাচন করবেন না`,
+    rangePrompt: (maxRange: number) => `${maxRange} দিনের বেশি নির্বাচন করবেন না`,
   },
   vanCascader: {
     select: 'নির্বাচন',

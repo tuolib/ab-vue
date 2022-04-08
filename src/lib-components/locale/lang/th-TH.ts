@@ -16,8 +16,7 @@ export default {
     title: 'การเลือกวันที่',
     weekdays: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'],
     monthTitle: (year: number, month: number) => `${year}ปี${month}เดือน`,
-    rangePrompt: (maxRange: number) =>
-      `จำนวนวันที่เลือกต้องไม่เกิน ${maxRange} วัน`,
+    rangePrompt: (maxRange: number) => `จำนวนวันที่เลือกต้องไม่เกิน ${maxRange} วัน`,
   },
   vanCascader: {
     select: 'โปรดเลือก',

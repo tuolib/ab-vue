@@ -39,9 +39,7 @@ export default defineComponent({
   props: loadingProps,
 
   setup(props, { slots }) {
-    const spinnerStyle = computed(() =>
-      extend({ color: props.color }, getSizeStyle(props.size))
-    );
+    const spinnerStyle = computed(() => extend({ color: props.color }, getSizeStyle(props.size)));
 
     const renderText = () => {
       if (slots.default) {

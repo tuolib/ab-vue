@@ -5,22 +5,16 @@ import { preventDefault } from '../utils';
 
 let totalLockCount = 0;
 
-const BODY_LOCK_CLASS = 'van-overflow-hidden';
+const BODY_LOCK_CLASS = 'abv-overflow-hidden';
 
-export function useLockScroll(
-  rootRef: Ref<HTMLElement | undefined>,
-  shouldLock: () => boolean
-) {
+export function useLockScroll(rootRef: Ref<HTMLElement | undefined>, shouldLock: () => boolean) {
   const touch = useTouch();
 
   const onTouchMove = (event: TouchEvent) => {
     touch.move(event);
 
     const direction = touch.deltaY.value > 0 ? '10' : '01';
-    const el = getScrollParent(
-      event.target as Element,
-      rootRef.value
-    ) as HTMLElement;
+    const el = getScrollParent(event.target as Element, rootRef.value) as HTMLElement;
     const { scrollHeight, offsetHeight, scrollTop } = el;
     let status = '11';
 
@@ -30,11 +24,7 @@ export function useLockScroll(
       status = '10';
     }
 
-    if (
-      status !== '11' &&
-      touch.isVertical() &&
-      !(parseInt(status, 2) & parseInt(direction, 2))
-    ) {
+    if (status !== '11' && touch.isVertical() && !(parseInt(status, 2) & parseInt(direction, 2))) {
       preventDefault(event, true);
     }
   };
@@ -71,7 +61,7 @@ export function useLockScroll(
   onDeactivated(destroy);
   onBeforeUnmount(destroy);
 
-  watch(shouldLock, (value) => {
+  watch(shouldLock, value => {
     value ? lock() : unlock();
   });
 }

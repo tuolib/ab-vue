@@ -10,9 +10,7 @@ export function addUnit(value?: Numeric): string | undefined {
   return undefined;
 }
 
-export function getSizeStyle(
-  originSize?: Numeric | Numeric[]
-): CSSProperties | undefined {
+export function getSizeStyle(originSize?: Numeric | Numeric[]): CSSProperties | undefined {
   if (isDef(originSize)) {
     if (Array.isArray(originSize)) {
       return {
@@ -42,8 +40,7 @@ let rootFontSize: number;
 function getRootFontSize() {
   if (!rootFontSize) {
     const doc = document.documentElement;
-    const fontSize =
-      doc.style.fontSize || window.getComputedStyle(doc).fontSize;
+    const fontSize = doc.style.fontSize || window.getComputedStyle(doc).fontSize;
 
     rootFontSize = parseFloat(fontSize);
   }
@@ -88,8 +85,7 @@ export function unitToPx(value: Numeric): number {
 
 const camelizeRE = /-(\w)/g;
 
-export const camelize = (str: string): string =>
-  str.replace(camelizeRE, (_, c) => c.toUpperCase());
+export const camelize = (str: string): string => str.replace(camelizeRE, (_, c) => c.toUpperCase());
 
 export const kebabCase = (str: string) =>
   str
@@ -125,11 +121,7 @@ function trimExtraChar(value: string, char: string, regExp: RegExp) {
   return value.slice(0, index + 1) + value.slice(index).replace(regExp, '');
 }
 
-export function formatNumber(
-  value: string,
-  allowDot = true,
-  allowMinus = true
-) {
+export function formatNumber(value: string, allowDot = true, allowMinus = true) {
   if (allowDot) {
     value = trimExtraChar(value, '.', /\./g);
   } else {

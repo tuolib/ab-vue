@@ -32,10 +32,7 @@ function genBem(name: string, mods?: Mods): string {
     return mods.reduce<string>((ret, item) => ret + genBem(name, item), '');
   }
 
-  return Object.keys(mods).reduce(
-    (ret, key) => ret + (mods[key] ? genBem(name, key) : ''),
-    ''
-  );
+  return Object.keys(mods).reduce((ret, key) => ret + (mods[key] ? genBem(name, key) : ''), '');
 }
 
 /**
@@ -63,9 +60,5 @@ export type BEM = ReturnType<typeof createBEM>;
 
 export function createNamespace(name: string) {
   const prefixedName = `abv-${name}`;
-  return [
-    prefixedName,
-    createBEM(prefixedName),
-    createTranslate(prefixedName),
-  ] as const;
+  return [prefixedName, createBEM(prefixedName), createTranslate(prefixedName)] as const;
 }

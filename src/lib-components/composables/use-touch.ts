@@ -36,6 +36,7 @@ export function useTouch() {
     reset();
     startX.value = event.touches[0].clientX;
     startY.value = event.touches[0].clientY;
+    // eslint-disable-next-line no-undef
   }) as EventListener;
 
   const move = ((event: TouchEvent) => {
@@ -50,11 +51,11 @@ export function useTouch() {
     const LOCK_DIRECTION_DISTANCE = 10;
     if (
       !direction.value ||
-      (offsetX.value < LOCK_DIRECTION_DISTANCE &&
-        offsetY.value < LOCK_DIRECTION_DISTANCE)
+      (offsetX.value < LOCK_DIRECTION_DISTANCE && offsetY.value < LOCK_DIRECTION_DISTANCE)
     ) {
       direction.value = getDirection(offsetX.value, offsetY.value);
     }
+    // eslint-disable-next-line no-undef
   }) as EventListener;
 
   return {

@@ -1,14 +1,5 @@
-import {
-  watch,
-  onMounted,
-  onUnmounted,
-  defineComponent,
-  type PropType,
-  type TeleportProps,
-  type CSSProperties,
-  type ExtractPropTypes,
-} from 'vue';
-
+import { watch, onMounted, onUnmounted, defineComponent } from 'vue';
+import type { PropType, TeleportProps, CSSProperties, ExtractPropTypes } from 'vue';
 // Utils
 import {
   pick,
@@ -53,7 +44,7 @@ const toastProps = {
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   className: unknownProp,
   iconPrefix: String,
-  transition: makeStringProp('van-fade'),
+  transition: makeStringProp('abv-fade'),
   loadingType: String as PropType<LoadingType>,
   forbidClick: Boolean,
   overlayClass: unknownProp,
@@ -72,6 +63,7 @@ export default defineComponent({
   emits: ['update:show'],
 
   setup(props, { emit }) {
+    // eslint-disable-next-line no-undef
     let timer: NodeJS.Timeout;
     let clickable = false;
 
@@ -94,8 +86,8 @@ export default defineComponent({
     const clearTimer = () => clearTimeout(timer);
 
     const renderIcon = () => {
-      const { icon, type, iconSize, iconPrefix, loadingType } = props;
-      const hasIcon = icon || type === 'success' || type === 'fail';
+      const { type, iconSize, loadingType } = props;
+      // const hasIcon = icon || type === 'success' || type === 'fail';
 
       // if (hasIcon) {
       //   return (
@@ -109,9 +101,7 @@ export default defineComponent({
       // }
 
       if (type === 'loading') {
-        return (
-          <Loading class={bem('loading')} size={iconSize} type={loadingType} />
-        );
+        return <Loading class={bem('loading')} size={iconSize} type={loadingType} />;
       }
     };
 
@@ -138,7 +128,7 @@ export default defineComponent({
             updateShow(false);
           }, props.duration);
         }
-      }
+      },
     );
 
     onMounted(toggleClickable);
@@ -146,11 +136,9 @@ export default defineComponent({
 
     return () => (
       <Popup
-        class={[
-          bem([props.position, { [props.type]: !props.icon }]),
-          props.className,
-        ]}
+        class={[bem([props.position, { [props.type]: !props.icon }]), props.className]}
         lockScroll={false}
+        // @ts-ignore
         onClick={onClick}
         onClosed={clearTimer}
         onUpdate:show={updateShow}

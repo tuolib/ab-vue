@@ -1,6 +1,6 @@
 <template>
   <div class="demo-loading">
-    <Loading></Loading>
+    <Loading />
     <Loading color="#1989fa" />
     <Loading type="spinner" color="#1989fa" />
   </div>
@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import "../index.less";
+@import '../index.less';
 .demo-loading {
   .ab-loading {
     display: inline-block;

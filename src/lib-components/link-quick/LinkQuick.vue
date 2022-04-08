@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 // import Link from './function-call';
-import { listen } from "./all";
+import { listen } from './all';
 // import requestIdleCallback from "./request-idle-callback";
 export default defineComponent({
   name: 'LinkQuick',
@@ -14,7 +14,7 @@ export default defineComponent({
           // timeout: 2e3,
           // priority: false,
           // timeoutFn: requestIdleCallback,
-        }
+        };
       },
     },
   },
@@ -24,9 +24,9 @@ export default defineComponent({
       console.log(props.options);
       let options = {
         ...props.options,
-      }
+      };
       if (linkContent.value) {
-        options.el = linkContent.value
+        options.el = linkContent.value;
       }
       console.log(options);
       listen(options);
@@ -34,7 +34,7 @@ export default defineComponent({
 
     return {
       linkContent,
-    }
+    };
   },
 });
 </script>

@@ -5,12 +5,12 @@ export function useLazyRender(show: WatchSource<boolean | undefined>) {
 
   watch(
     show,
-    (value) => {
+    value => {
       if (value) {
         inited.value = value;
       }
     },
-    { immediate: true }
+    { immediate: true },
   );
 
   return (render: () => JSX.Element) => () => inited.value ? render() : null;

@@ -14,7 +14,7 @@
  * limitations under the License.
  **/
 import throttle from 'throttles';
-import {priority, supported} from './prefetch.js';
+import { priority, supported } from './prefetch.js';
 import requestIdleCallback from './request-idle-callback.js';
 
 // Cache of URLs we've prefetched
@@ -62,8 +62,8 @@ export function listen(options) {
   if (!options) options = {};
   if (!window.IntersectionObserver) return;
 
-  const [toAdd, isDone] = throttle(options.throttle || 1/0);
-  const limit = options.limit || 1/0;
+  const [toAdd, isDone] = throttle(options.throttle || 1 / 0);
+  const limit = options.limit || 1 / 0;
   const threshold = options.threshold || 0;
 
   const allowed = options.origins || [location.hostname];
@@ -80,58 +80,67 @@ export function listen(options) {
       return;
     }
     setTimeout(callback, delay);
-  }
+  };
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      // On enter
-      if (entry.isIntersecting) {
-        entry = entry.target;
-        // Adding href to array of hrefsInViewport
-        hrefsInViewport.push(entry.href);
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        // On enter
+        if (entry.isIntersecting) {
+          entry = entry.target;
+          // Adding href to array of hrefsInViewport
+          hrefsInViewport.push(entry.href);
 
-        // Setting timeout
-        setTimeoutIfDelay(() => {
-          // Do not prefetch if not found in viewport
-          if (hrefsInViewport.indexOf(entry.href) === -1) return;
+          // Setting timeout
+          setTimeoutIfDelay(() => {
+            // Do not prefetch if not found in viewport
+            if (hrefsInViewport.indexOf(entry.href) === -1) return;
 
-          observer.unobserve(entry);
-          // Do not prefetch if will match/exceed limit
-          if (toPrefetch.size < limit) {
-            toAdd(() => {
-              prefetch(hrefFn ? hrefFn(entry) : entry.href, options.priority).then(isDone).catch(err => {
-                isDone(); if (options.onError) options.onError(err);
+            observer.unobserve(entry);
+            // Do not prefetch if will match/exceed limit
+            if (toPrefetch.size < limit) {
+              toAdd(() => {
+                prefetch(hrefFn ? hrefFn(entry) : entry.href, options.priority)
+                  .then(isDone)
+                  .catch(err => {
+                    isDone();
+                    if (options.onError) options.onError(err);
+                  });
               });
-            });
-          }
-        }, delay);
-      }
-      // On exit
-      else {
-        entry = entry.target;
-        const index = hrefsInViewport.indexOf(entry.href);
-        if (index > -1) {
-          hrefsInViewport.splice(index);
+            }
+          }, delay);
         }
-      }
-    });
-  }, {
-    threshold
-  });
+        // On exit
+        else {
+          entry = entry.target;
+          const index = hrefsInViewport.indexOf(entry.href);
+          if (index > -1) {
+            hrefsInViewport.splice(index);
+          }
+        }
+      });
+    },
+    {
+      threshold,
+    },
+  );
 
-  timeoutFn(() => {
-    // Find all links & Connect them to IO if allowed
-    (options.el || document).querySelectorAll('a').forEach(link => {
-      // If the anchor matches a permitted origin
-      // ~> A `[]` or `true` means everything is allowed
-      if (!allowed.length || allowed.includes(link.hostname)) {
-        // If there are any filters, the link must not match any of them
-        isIgnored(link, ignores) || observer.observe(link);
-      }
-    });
-  }, {
-    timeout: options.timeout || 2000,
-  });
+  timeoutFn(
+    () => {
+      // Find all links & Connect them to IO if allowed
+      (options.el || document).querySelectorAll('a').forEach(link => {
+        // If the anchor matches a permitted origin
+        // ~> A `[]` or `true` means everything is allowed
+        if (!allowed.length || allowed.includes(link.hostname)) {
+          // If there are any filters, the link must not match any of them
+          isIgnored(link, ignores) || observer.observe(link);
+        }
+      });
+    },
+    {
+      timeout: options.timeout || 2000,
+    },
+  );
 
   return function () {
     // wipe url list
@@ -141,7 +150,6 @@ export function listen(options) {
   };
 }
 
-
 /**
  * Prefetch a given URL with an optional preferred fetch priority
  * @param {String} url - the URL to fetch
@@ -150,7 +158,7 @@ export function listen(options) {
  * @return {Object} a Promise
  */
 export function prefetch(url, isPriority, conn) {
-  if (conn = navigator.connection) {
+  if ((conn = navigator.connection)) {
     // Don't prefetch if using 2G or if Save-Data is enabled.
     if (conn.saveData) {
       return Promise.reject(new Error('Cannot prefetch, Save-Data is enabled'));
@@ -168,10 +176,8 @@ export function prefetch(url, isPriority, conn) {
         // ~> so that we don't repeat broken links
         toPrefetch.add(str);
 
-        return (isPriority ? priority : supported)(
-          new URL(str, location.href).toString()
-        );
+        return (isPriority ? priority : supported)(new URL(str, location.href).toString());
       }
-    })
+    }),
   );
 }

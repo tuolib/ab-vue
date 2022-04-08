@@ -16,8 +16,7 @@ export default {
     title: 'Kalender',
     weekdays: ['minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: number) =>
-      `Pilih tidak lebih dari ${maxRange} hari`,
+    rangePrompt: (maxRange: number) => `Pilih tidak lebih dari ${maxRange} hari`,
   },
   vanCascader: {
     select: 'Pilih',

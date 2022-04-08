@@ -15,7 +15,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-**/
+ **/
 
 /**
  * Checks if a feature on `link` is natively supported.
@@ -44,7 +44,7 @@ function viaDOM(url) {
 
     document.head.appendChild(link);
   });
-};
+}
 
 /**
  * Fetches a given URL using XMLHttpRequest
@@ -55,10 +55,10 @@ function viaXHR(url) {
   return new Promise((res, rej, req) => {
     req = new XMLHttpRequest();
 
-    req.open(`GET`, url, req.withCredentials=true);
+    req.open(`GET`, url, (req.withCredentials = true));
 
     req.onload = () => {
-      (req.status === 200) ? res() : rej();
+      req.status === 200 ? res() : rej();
     };
 
     req.send();
@@ -79,7 +79,7 @@ export function priority(url) {
   //
   // As of 2018, fetch() is high-priority in Chrome
   // and medium-priority in Safari.
-  return window.fetch ? fetch(url, {credentials: `include`}) : viaXHR(url);
+  return window.fetch ? fetch(url, { credentials: `include` }) : viaXHR(url);
 }
 
 export const supported = hasPrefetch() ? viaDOM : viaXHR;

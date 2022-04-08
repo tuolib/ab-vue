@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import '../index.less';
 import VanButton from '../../button';
 import VanOverlay from '..';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site';
+import { useTranslate } from '../../utils/use-translate';
 
 const t = useTranslate({
   'zh-CN': {
@@ -20,7 +21,7 @@ const showEmbedded = ref(false);
 </script>
 
 <template>
-  <demo-block :title="t('basicUsage')">
+  <div :title="t('basicUsage')">
     <van-button
       type="primary"
       :text="t('showOverlay')"
@@ -28,9 +29,9 @@ const showEmbedded = ref(false);
       @click="show = true"
     />
     <van-overlay :show="show" @click="show = false" />
-  </demo-block>
+  </div>
 
-  <demo-block :title="t('embeddedContent')">
+  <div :title="t('embeddedContent')">
     <van-button
       type="primary"
       :text="t('embeddedContent')"
@@ -42,7 +43,7 @@ const showEmbedded = ref(false);
         <div class="block" />
       </div>
     </van-overlay>
-  </demo-block>
+  </div>
 </template>
 
 <style lang="less">

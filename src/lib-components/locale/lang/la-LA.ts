@@ -16,8 +16,7 @@ export default {
     title: 'ການເລືອກວັນທີ່',
     weekdays: ['ອາ', 'ຈ', 'ອ', 'ພ', 'ພຫ', 'ສ', 'ສ'],
     monthTitle: (year: number, month: number) => `${year}ປີ${month}ເດືອນ`,
-    rangePrompt: (maxRange: number) =>
-      `ຈຳນອນວັນທີ່ເລືອກຕ້ອງບໍ່ເກີນ ${maxRange} ວັນ`,
+    rangePrompt: (maxRange: number) => `ຈຳນອນວັນທີ່ເລືອກຕ້ອງບໍ່ເກີນ ${maxRange} ວັນ`,
   },
   vanCascader: {
     select: 'ກະລຸນາເລືອກ',

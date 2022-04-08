@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import './step.css';
+// import './step.css';
 export default defineComponent({
   name: 'Step',
 

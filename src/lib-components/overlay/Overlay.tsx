@@ -45,10 +45,7 @@ export default defineComponent({
     };
 
     const renderOverlay = lazyRender(() => {
-      const style: CSSProperties = extend(
-        getZIndexStyle(props.zIndex),
-        props.customStyle
-      );
+      const style: CSSProperties = extend(getZIndexStyle(props.zIndex), props.customStyle);
 
       if (isDef(props.duration)) {
         style.animationDuration = `${props.duration}s`;
@@ -66,8 +63,6 @@ export default defineComponent({
       );
     });
 
-    return () => (
-      <Transition v-slots={{ default: renderOverlay }} name="van-fade" appear />
-    );
+    return () => <Transition v-slots={{ default: renderOverlay }} name="abv-fade" appear />;
   },
 });

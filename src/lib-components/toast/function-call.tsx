@@ -1,13 +1,8 @@
-import { ref, watch, getCurrentInstance, type App } from 'vue';
-import {
-  extend,
-  isObject,
-  inBrowser,
-  withInstall,
-  type ComponentInstance,
-} from '../utils';
+import { ref, watch, getCurrentInstance } from 'vue';
+// import type { App } from 'vue';
+import { extend, isObject, inBrowser, type ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanToast from './Toast';
+import AbvToast from './Toast';
 import type { ToastType, ToastOptions } from './types';
 
 const defaultOptions: ToastOptions = {
@@ -23,7 +18,7 @@ const defaultOptions: ToastOptions = {
   iconSize: undefined,
   iconPrefix: undefined,
   position: 'middle',
-  transition: 'van-fade',
+  transition: 'abv-fade',
   forbidClick: false,
   loadingType: undefined,
   overlayClass: '',
@@ -54,7 +49,7 @@ function createInstance() {
 
       const onClosed = () => {
         if (allowMultiple) {
-          queue = queue.filter((item) => item !== instance);
+          queue = queue.filter(item => item !== instance);
           unmount();
         }
       };
@@ -64,11 +59,11 @@ function createInstance() {
           onClosed,
           'onUpdate:show': toggle,
         };
-        return <VanToast {...state} {...attrs} />;
+        return <AbvToast {...state} {...attrs} />;
       };
 
       // support dynamic modification of message
-      watch(message, (val) => {
+      watch(message, val => {
         state.message = val;
       });
 
@@ -108,8 +103,8 @@ function Toast(options: string | ToastOptions = {}) {
       {},
       currentOptions,
       defaultOptionsMap.get(parsedOptions.type || currentOptions.type!),
-      parsedOptions
-    )
+      parsedOptions,
+    ),
   );
 
   return toast;
@@ -125,7 +120,7 @@ Toast.fail = createMethod('fail');
 Toast.clear = (all?: boolean) => {
   if (queue.length) {
     if (all) {
-      queue.forEach((toast) => {
+      queue.forEach(toast => {
         toast.clear();
       });
       queue = [];
@@ -139,10 +134,7 @@ Toast.clear = (all?: boolean) => {
 
 function setDefaultOptions(options: ToastOptions): void;
 function setDefaultOptions(type: ToastType, options: ToastOptions): void;
-function setDefaultOptions(
-  type: ToastType | ToastOptions,
-  options?: ToastOptions
-) {
+function setDefaultOptions(type: ToastType | ToastOptions, options?: ToastOptions) {
   if (typeof type === 'string') {
     defaultOptionsMap.set(type, options!);
   } else {
@@ -163,11 +155,6 @@ Toast.resetDefaultOptions = (type?: ToastType) => {
 
 Toast.allowMultiple = (value = true) => {
   allowMultiple = value;
-};
-
-Toast.install = (app: App) => {
-  app.use(withInstall(VanToast));
-  app.config.globalProperties.$toast = Toast;
 };
 
 export { Toast };

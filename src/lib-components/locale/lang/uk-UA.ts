@@ -14,18 +14,9 @@ export default {
     end: 'Кінець',
     start: 'Почати',
     title: 'Календар',
-    weekdays: [
-      'неділя',
-      'понеділок',
-      'вівторок',
-      'середа',
-      'четвер',
-      "п'ятниця",
-      'субота',
-    ],
+    weekdays: ['неділя', 'понеділок', 'вівторок', 'середа', 'четвер', "п'ятниця", 'субота'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: number) =>
-      `Виберіть не більше ніж ${maxRange} днів`,
+    rangePrompt: (maxRange: number) => `Виберіть не більше ніж ${maxRange} днів`,
   },
   vanCascader: {
     select: 'Вибрати',

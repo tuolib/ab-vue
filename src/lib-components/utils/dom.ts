@@ -20,12 +20,7 @@ export function setScrollTop(el: ScrollElement, value: number) {
 }
 
 export function getRootScrollTop(): number {
-  return (
-    window.pageYOffset ||
-    document.documentElement.scrollTop ||
-    document.body.scrollTop ||
-    0
-  );
+  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 }
 
 export function setRootScrollTop(value: number) {
@@ -66,9 +61,7 @@ export function preventDefault(event: Event, isStopPropagation?: boolean) {
   }
 }
 
-export function isHidden(
-  elementRef: HTMLElement | Ref<HTMLElement | undefined>
-) {
+export function isHidden(elementRef: HTMLElement | Ref<HTMLElement | undefined>) {
   const el = unref(elementRef);
   if (!el) {
     return false;
