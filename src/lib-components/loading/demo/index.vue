@@ -8,13 +8,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import '../style/index.js';
+
 export default defineComponent({
   name: 'LoadingDemo',
 });
 </script>
 
 <style lang="less">
-@import '../index.less';
 .demo-loading {
   .ab-loading {
     display: inline-block;

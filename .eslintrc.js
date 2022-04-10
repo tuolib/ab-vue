@@ -135,6 +135,7 @@ module.exports = {
       },
     ],
     'space-before-function-paren': ['error', 'never'],
+    // 'no-unused-variable': [true, { 'ignore-pattern': '^_' }],
   },
   settings: {
     'vue-i18n': {

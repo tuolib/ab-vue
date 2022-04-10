@@ -67,6 +67,7 @@ export default defineComponent({
             },
           ])}
           size="large"
+          // @ts-ignore
           type={type}
           icon={icon}
           color={color}

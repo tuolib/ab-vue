@@ -14,6 +14,7 @@ import { useRoute, routeProps } from '../composables/use-route';
 // Components
 // import { Icon } from '../icon';
 import { Loading, LoadingType } from '../loading';
+import Tag from '../tag';
 
 // Types
 import { ButtonSize, ButtonType, ButtonNativeType, ButtonIconPosition } from './types';
@@ -156,7 +157,8 @@ export default defineComponent({
       ];
 
       return (
-        <tag
+        <Tag
+          // @ts-ignore
           type={nativeType}
           class={classes}
           style={getStyle()}
@@ -168,7 +170,7 @@ export default defineComponent({
             {renderText()}
             {iconPosition === 'right' && renderIcon()}
           </div>
-        </tag>
+        </Tag>
       );
     };
   },

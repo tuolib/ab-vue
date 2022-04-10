@@ -4,6 +4,8 @@ import VanCell from '../../cell';
 import VanPopup from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../utils/use-translate';
+import '../../cell/style/index.js';
+import '../style/index.js';
 
 const t = useTranslate({
   'zh-CN': {

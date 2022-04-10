@@ -1,8 +1,10 @@
 // import { App } from 'vue';
 import { extend, inBrowser, ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanDialog from './Dialog';
+import AbvDialog from './Dialog';
 import type { DialogAction, DialogOptions } from './types';
+import { withInstall } from '../utils/with-install';
+import type { App } from 'vue';
 
 let instance: ComponentInstance;
 
@@ -10,7 +12,7 @@ function initInstance() {
   const Wrapper = {
     setup() {
       const { state, toggle } = usePopupState();
-      return () => <VanDialog {...state} onUpdate:show={toggle} />;
+      return () => <AbvDialog {...state} onUpdate:show={toggle} />;
     },
   };
 
@@ -84,11 +86,11 @@ Dialog.resetDefaultOptions = () => {
   Dialog.currentOptions = extend({}, Dialog.defaultOptions);
 };
 
-// Dialog.Component = withInstall(VanDialog);
+Dialog.Component = withInstall(AbvDialog);
 
-// Dialog.install = (app: App) => {
-//   app.use(Dialog.Component);
-//   app.config.globalProperties.$dialog = Dialog;
-// };
-
+Dialog.install = (app: App) => {
+  app.use(Dialog.Component);
+  app.config.globalProperties.$dialog = Dialog;
+};
+export default AbvDialog;
 export { Dialog };

@@ -3,7 +3,8 @@ import { useTranslate } from '../../utils/use-translate';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
 import Cell from '../../cell';
-import '../../cell/index.less';
+import '../../cell/style/index.js';
+import '../style/index.js';
 
 const t = useTranslate({
   'zh-CN': {

@@ -1,22 +1,22 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { AbVue3Sample } from '@/entry.esm';
 // import LoadingDemo from './demo/LoadingDemo.vue';
 
 import LoadingDemo from '../src/lib-components/loading/demo/index.vue';
-import '../src/lib-components/loading/style/index';
+// import '../src/lib-components/loading/style/index';
 
 import LinkQuick from '../src/lib-components/link-quick/index';
 
-import PopupDemo from '../src/lib-components/popup/demo/index.vue';
-import '../src/lib-components/popup/style/index';
-
 import ToastDemo from '../src/lib-components/toast/demo/index.vue';
-import '../src/lib-components/toast/style/index';
+// import '../src/lib-components/toast/style/index';
+
+import PopupDemo from '../src/lib-components/popup/demo/index.vue';
+// import '../src/lib-components/popup/style/index';
 
 import DialogDemo from '../src/lib-components/dialog/demo/index.vue';
-import '../src/lib-components/dialog/style/index';
+// import '../src/lib-components/dialog/style/index';
 
 export default defineComponent({
   name: 'ServeDev',
@@ -29,6 +29,16 @@ export default defineComponent({
     PopupDemo,
     DialogDemo,
   },
+  setup() {
+    const showDemo = ref('ToastDemo');
+    const setShow = (val: string) => {
+      showDemo.value = val;
+    };
+    return {
+      showDemo,
+      setShow,
+    };
+  },
 });
 </script>
 
@@ -39,17 +49,15 @@ export default defineComponent({
       <a href="https://dockergene.com">123</a>
     </LinkQuick>
     <div class="blockDemo">
-      <div class="demoTitle">toast 例子：</div>
-      <ToastDemo />
+      <Cell title="toast 例子：" @click="setShow('ToastDemo')" />
     </div>
     <div class="blockDemo">
-      <div class="demoTitle">Popup 例子：</div>
-      <PopupDemo />
+      <Cell title="Popup 例子：" @click="setShow('PopupDemo')" />
     </div>
     <div class="blockDemo">
-      <div class="demoTitle">dialog 例子：</div>
-      <DialogDemo />
+      <Cell title="dialog 例子：" @click="setShow('DialogDemo')" />
     </div>
+    <component :is="showDemo" />
   </div>
 </template>
 <style lang="less">

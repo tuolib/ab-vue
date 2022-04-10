@@ -4,8 +4,10 @@ import { Dialog } from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../utils/use-translate';
 import type { DialogAction } from '../types';
+import '../../cell/style/index.js';
+import '../style/index.js';
 
-const VanDialog = Dialog.Component;
+const AbvDialog = Dialog.Component;
 
 const t = useTranslate({
   'zh-CN': {
@@ -104,9 +106,10 @@ const onClickBeforeClose = () => {
 
   <div card :title="t('componentCall')">
     <Cell is-link :title="t('componentCall')" @click="show = true" />
-    <van-dialog v-model:show="show" :title="t('title')" show-cancel-button :lazy-render="false">
+    <AbvDialog v-model:show="show" :title="t('title')" show-cancel-button :lazy-render="false">
       <!--      <img :src="image" />-->
-    </van-dialog>
+      <div>dslfjsldjflsdkjf</div>
+    </AbvDialog>
   </div>
 </template>
 
