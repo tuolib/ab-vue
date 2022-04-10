@@ -18,6 +18,10 @@ import PopupDemo from '../src/lib-components/popup/demo/index.vue';
 import DialogDemo from '../src/lib-components/dialog/demo/index.vue';
 // import '../src/lib-components/dialog/style/index';
 
+import SwipeDemo from '../src/lib-components/swipe/demo/index.vue';
+import NoticeDemo from '../src/lib-components/notice-bar/demo/index.vue';
+import TabDemo from '../src/lib-components/tab/demo/index.vue';
+
 export default defineComponent({
   name: 'ServeDev',
   components: {
@@ -28,9 +32,12 @@ export default defineComponent({
     ToastDemo,
     PopupDemo,
     DialogDemo,
+    SwipeDemo,
+    NoticeDemo,
+    TabDemo,
   },
   setup() {
-    const showDemo = ref('ToastDemo');
+    const showDemo = ref('');
     const setShow = (val: string) => {
       showDemo.value = val;
     };
@@ -56,6 +63,15 @@ export default defineComponent({
     </div>
     <div class="blockDemo">
       <Cell title="dialog 例子：" @click="setShow('DialogDemo')" />
+    </div>
+    <div class="blockDemo">
+      <Cell title="SwipeDemo 例子：" @click="setShow('SwipeDemo')" />
+    </div>
+    <div class="blockDemo">
+      <Cell title="NoticeDemo 例子：" @click="setShow('NoticeDemo')" />
+    </div>
+    <div class="blockDemo">
+      <Cell title="TabDemo 例子：" @click="setShow('TabDemo')" />
     </div>
     <component :is="showDemo" />
   </div>

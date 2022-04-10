@@ -4,7 +4,10 @@ import Dev from './serve.vue';
 // library as a whole, comment/remove this import and it's corresponding "app.use" call
 import AbVue from '@/entry.esm';
 
+import DemoBlock from './demo/demo-block.vue';
+
 const app = createApp(Dev);
 app.use(AbVue);
 
+app.component(DemoBlock.name, DemoBlock);
 app.mount('#app');
