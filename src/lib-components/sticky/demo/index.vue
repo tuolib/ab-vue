@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import VanSticky from '..';
-import VanButton from '../../button';
+import AbvSticky from '..';
+import AbvButton from '../../button';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site';
+import { useTranslate } from '../../utils/use-translate';
 
 const t = useTranslate({
   'zh-CN': {
@@ -22,41 +22,38 @@ const container = ref<Element>();
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-sticky>
-      <van-button type="primary" style="margin-left: 15px">
+    <abv-sticky>
+      <abv-button type="primary" style="margin-left: 15px">
         {{ t('basicUsage') }}
-      </van-button>
-    </van-sticky>
+      </abv-button>
+    </abv-sticky>
   </demo-block>
 
   <demo-block :title="t('offsetTop')">
-    <van-sticky :offset-top="50">
-      <van-button type="primary" style="margin-left: 115px">
+    <abv-sticky :offset-top="50">
+      <abv-button type="primary" style="margin-left: 115px">
         {{ t('offsetTop') }}
-      </van-button>
-    </van-sticky>
+      </abv-button>
+    </abv-sticky>
   </demo-block>
 
   <demo-block :title="t('setContainer')">
-    <div
-      ref="container"
-      style="height: 150px; background-color: var(--van-background-2)"
-    >
-      <van-sticky :container="container">
-        <van-button type="warning" style="margin-left: 215px">
+    <div ref="container" style="height: 150px; background-color: var(--abv-background-2)">
+      <abv-sticky :container="container">
+        <abv-button type="warning" style="margin-left: 215px">
           {{ t('setContainer') }}
-        </van-button>
-      </van-sticky>
+        </abv-button>
+      </abv-sticky>
     </div>
   </demo-block>
 
   <demo-block :title="t('offsetBottom')">
     <div style="height: 200px"></div>
-    <van-sticky :offset-bottom="50" position="bottom">
-      <van-button type="primary" style="margin-left: 15px">
+    <abv-sticky :offset-bottom="50" position="bottom">
+      <abv-button type="primary" style="margin-left: 15px">
         {{ t('offsetBottom') }}
-      </van-button>
-    </van-sticky>
+      </abv-button>
+    </abv-sticky>
   </demo-block>
 </template>
 
@@ -64,8 +61,8 @@ const container = ref<Element>();
 .demo-sticky {
   height: 200vh;
 
-  .van-button {
-    margin-left: var(--van-padding-md);
+  .abv-button {
+    margin-left: var(--abv-padding-md);
   }
 }
 </style>

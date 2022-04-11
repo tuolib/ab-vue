@@ -165,6 +165,7 @@ const beforeChange = (name: number) => {
     <abv-tabs v-model:active="active10" scrollspy sticky>
       <abv-tab :title="t('tab') + index" v-for="index in 8" :key="index">
         {{ t('content') }} {{ index }}
+        <div v-for="item in 10" :key="item"> item {{ item }} </div>
       </abv-tab>
     </abv-tabs>
   </demo-block>

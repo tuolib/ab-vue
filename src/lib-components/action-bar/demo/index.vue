@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import VanActionBar from '..';
-import VanActionBarIcon from '../../action-bar-icon';
-import VanActionBarButton from '../../action-bar-button';
-import { useTranslate } from '../../../docs/site';
+import AbvActionBar from '..';
+// import AbvActionBarIcon from '../../action-bar-icon';
+import AbvActionBarButton from '../../action-bar-button';
+import { useTranslate } from '../../utils/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({
@@ -33,77 +33,42 @@ const t = useTranslate({
     customButtonColor: 'Custom Button Color',
   },
 });
-const onClickIcon = () => Toast(t('clickIcon'));
+// const onClickIcon = () => Toast(t('clickIcon'));
 const onClickButton = () => Toast(t('clickButton'));
 </script>
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-action-bar>
-      <van-action-bar-icon
-        icon="chat-o"
-        :text="t('icon1')"
-        @click="onClickIcon"
-      />
-      <van-action-bar-icon
-        icon="cart-o"
-        :text="t('icon2')"
-        @click="onClickIcon"
-      />
-      <van-action-bar-icon
-        icon="shop-o"
-        :text="t('icon3')"
-        @click="onClickIcon"
-      />
-      <van-action-bar-button
-        type="danger"
-        :text="t('button2')"
-        @click="onClickButton"
-      />
-    </van-action-bar>
+    <abv-action-bar>
+      <abv-action-bar-button type="danger" :text="t('button2')" @click="onClickButton" />
+    </abv-action-bar>
   </demo-block>
 
   <demo-block :title="t('iconBadge')">
-    <van-action-bar>
-      <van-action-bar-icon icon="chat-o" dot :text="t('icon1')" />
-      <van-action-bar-icon icon="cart-o" badge="5" :text="t('icon2')" />
-      <van-action-bar-icon icon="shop-o" badge="12" :text="t('icon3')" />
-      <van-action-bar-button type="warning" :text="t('button1')" />
-      <van-action-bar-button type="danger" :text="t('button2')" />
-    </van-action-bar>
+    <abv-action-bar>
+      <abv-action-bar-button type="warning" :text="t('button1')" />
+      <abv-action-bar-button type="danger" :text="t('button2')" />
+    </abv-action-bar>
   </demo-block>
 
   <demo-block :title="t('customIconColor')">
-    <van-action-bar>
-      <van-action-bar-icon icon="chat-o" :text="t('icon1')" color="#ee0a24" />
-      <van-action-bar-icon icon="cart-o" :text="t('icon2')" />
-      <van-action-bar-icon icon="star" :text="t('collected')" color="#ff5000" />
-      <van-action-bar-button type="warning" :text="t('button1')" />
-      <van-action-bar-button type="danger" :text="t('button2')" />
-    </van-action-bar>
+    <abv-action-bar>
+      <abv-action-bar-button type="warning" :text="t('button1')" />
+      <abv-action-bar-button type="danger" :text="t('button2')" />
+    </abv-action-bar>
   </demo-block>
 
   <demo-block :title="t('customButtonColor')">
-    <van-action-bar>
-      <van-action-bar-icon icon="chat-o" :text="t('icon1')" />
-      <van-action-bar-icon icon="cart-o" :text="t('icon2')" />
-      <van-action-bar-button
-        color="#be99ff"
-        type="warning"
-        :text="t('button1')"
-      />
-      <van-action-bar-button
-        color="#7232dd"
-        type="danger"
-        :text="t('button2')"
-      />
-    </van-action-bar>
+    <abv-action-bar>
+      <abv-action-bar-button color="#be99ff" type="warning" :text="t('button1')" />
+      <abv-action-bar-button color="#7232dd" type="danger" :text="t('button2')" />
+    </abv-action-bar>
   </demo-block>
 </template>
 
 <style lang="less">
 .demo-action-bar {
-  .van-action-bar {
+  .abv-action-bar {
     position: relative;
     padding-bottom: 0;
   }
