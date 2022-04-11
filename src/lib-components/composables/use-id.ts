@@ -7,9 +7,9 @@ export function useId() {
   const { name = 'unknown' } = vm?.type || {};
 
   // keep jest snapshot stable
-  if (process.env.NODE_ENV === 'test') {
-    return name;
-  }
+  // if (process.env.NODE_ENV === 'test') {
+  //   return name;
+  // }
 
   return `${name}-${++current}`;
 }

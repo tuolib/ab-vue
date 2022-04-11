@@ -1,8 +1,9 @@
 export { default as Sample } from './sample/ab-vue-sample.vue';
-export { default as Button } from './button';
 export { default as Tip } from './tip';
-export { default as Tag } from './tag';
 export { default as Step } from './step';
+// new
+export { default as Tag } from './tag';
+export { default as Button } from './button';
 export { default as Loading } from './loading';
 export { default as LinkQuick } from './link-quick';
 export { default as Overlay } from './overlay';
@@ -21,3 +22,6 @@ export { default as ActionBarButton } from './action-bar-button';
 export { default as Switch } from './switch';
 export { default as Skeleton } from './skeleton';
 export { default as PullRefresh } from './pull-refresh';
+export { default as NavBar } from './nav-bar';
+export { default as Tabbar } from './tabbar';
+export { default as TabbarItem } from './tabbar-item';

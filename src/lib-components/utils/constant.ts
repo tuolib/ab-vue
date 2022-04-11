@@ -11,4 +11,4 @@ export const BORDER_UNSET_TOP_BOTTOM = `${BORDER}-unset--top-bottom`;
 
 export const HAPTICS_FEEDBACK = 'abv-haptics-feedback';
 
-// export const FORM_KEY: InjectionKey<FormProvide> = Symbol('abv-form');
+export const FORM_KEY = Symbol('abv-form');
