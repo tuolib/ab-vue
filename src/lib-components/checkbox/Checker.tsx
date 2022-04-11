@@ -58,6 +58,7 @@ export default defineComponent({
 
     const direction = computed(() => getParentProp('direction'));
 
+    // eslint-disable-next-line vue/return-in-computed-property
     const iconStyle = computed(() => {
       const checkedColor = props.checkedColor || getParentProp('checkedColor');
 

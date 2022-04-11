@@ -34,6 +34,7 @@ export default defineComponent({
     const { parent } = useParent(CHECKBOX_GROUP_KEY);
 
     const setParentValue = (checked: boolean) => {
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const { name } = props;
       const { max, modelValue } = parent!.props;
       const value = modelValue.slice();
