@@ -31,3 +31,5 @@ export { default as List } from './list';
 export { default as Lazyload } from './lazyload';
 export { default as Checkbox } from './checkbox';
 export { default as CheckboxGroup } from './checkbox-group';
+export { default as DropdownItem } from './dropdown-item';
+export { default as DropdownMenu } from './dropdown-menu';
