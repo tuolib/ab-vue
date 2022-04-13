@@ -69,7 +69,7 @@ const tabsProps = {
   lineWidth: numericProp,
   lineHeight: numericProp,
   beforeChange: Function as PropType<Interceptor>,
-  swipeThreshold: makeNumericProp(5),
+  swipeThreshold: makeNumericProp(3),
   titleActiveColor: String,
   titleInactiveColor: String,
 };
@@ -83,7 +83,7 @@ export default defineComponent({
 
   props: tabsProps,
 
-  emits: ['change', 'scroll', 'rendered', 'clickTab', 'update:active'],
+  emits: ['change', 'scroll', 'rendered', 'clickTab', 'update:active', 'lineStyle'],
 
   setup(props, { emit, slots }) {
     let tabHeight: number;
@@ -186,7 +186,7 @@ export default defineComponent({
           lineStyle.height = height;
           lineStyle.borderRadius = height;
         }
-
+        emit('lineStyle', lineStyle);
         state.lineStyle = lineStyle;
       });
     };
@@ -332,7 +332,11 @@ export default defineComponent({
 
     const renderLine = () => {
       if (props.type === 'line' && children.length) {
-        return <div class={bem('line')} style={state.lineStyle} />;
+        return (
+          <div class={bem('line')} style={state.lineStyle}>
+            {slots['nav-line']?.()}
+          </div>
+        );
       }
     };
 

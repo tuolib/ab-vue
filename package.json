@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.43",
+  "version": "0.0.46",
   "description": "",
   "license": "ISC",
   "main": "dist/cjs/entry.js",
