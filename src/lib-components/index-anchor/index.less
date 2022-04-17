@@ -1,0 +1,31 @@
+body {
+  --abv-index-anchor-z-index: 1;
+  --abv-index-anchor-padding: 0 var(--abv-padding-md);
+  --abv-index-anchor-text-color: var(--abv-text-color);
+  --abv-index-anchor-font-weight: var(--abv-font-bold);
+  --abv-index-anchor-font-size: var(--abv-font-size-md);
+  --abv-index-anchor-line-height: 32px;
+  --abv-index-anchor-background: transparent;
+  --abv-index-anchor-sticky-text-color: var(--abv-primary-color);
+  --abv-index-anchor-sticky-background: var(--abv-background-2);
+}
+
+.abv-index-anchor {
+  z-index: var(--abv-index-anchor-z-index);
+  box-sizing: border-box;
+  padding: var(--abv-index-anchor-padding);
+  color: var(--abv-index-anchor-text-color);
+  font-weight: var(--abv-index-anchor-font-weight);
+  font-size: var(--abv-index-anchor-font-size);
+  line-height: var(--abv-index-anchor-line-height);
+  background: var(--abv-index-anchor-background);
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    color: var(--abv-index-anchor-sticky-text-color);
+    background: var(--abv-index-anchor-sticky-background);
+  }
+}
