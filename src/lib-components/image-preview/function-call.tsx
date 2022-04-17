@@ -39,21 +39,12 @@ function initInstance() {
         (state as any).images = [];
       };
 
-      return () => (
-        <AbvImagePreview
-          {...state}
-          onClosed={onClosed}
-          onUpdate:show={toggle}
-        />
-      );
+      return () => <AbvImagePreview {...state} onClosed={onClosed} onUpdate:show={toggle} />;
     },
   }));
 }
 
-const ImagePreview = (
-  options: string[] | ImagePreviewOptions,
-  startPosition = 0
-) => {
+const ImagePreview = (options: string[] | ImagePreviewOptions, startPosition = 0) => {
   /* istanbul ignore if */
   if (!inBrowser) {
     return;
@@ -63,9 +54,7 @@ const ImagePreview = (
     initInstance();
   }
 
-  options = Array.isArray(options)
-    ? { images: options, startPosition }
-    : options;
+  options = Array.isArray(options) ? { images: options, startPosition } : options;
 
   instance.open(extend({}, defaultConfig, options));
 

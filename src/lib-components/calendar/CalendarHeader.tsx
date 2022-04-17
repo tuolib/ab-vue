@@ -42,6 +42,7 @@ export default defineComponent({
     const renderWeekDays = () => {
       const { firstDayOfWeek } = props;
       const weekdays = t('weekdays');
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const renderWeekDays = [
         ...weekdays.slice(firstDayOfWeek, 7),
         ...weekdays.slice(0, firstDayOfWeek),
@@ -49,7 +50,7 @@ export default defineComponent({
 
       return (
         <div class={bem('weekdays')}>
-          {renderWeekDays.map((text) => (
+          {renderWeekDays.map(text => (
             <span class={bem('weekday')}>{text}</span>
           ))}
         </div>

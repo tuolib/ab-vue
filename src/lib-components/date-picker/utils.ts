@@ -43,9 +43,9 @@ export const genOptions = <T extends string>(
   max: number,
   type: T,
   formatter: Formatter,
-  filter?: Filter
+  filter?: Filter,
 ) => {
-  const options = times(max - min + 1, (index) => {
+  const options = times(max - min + 1, index => {
     const value = padZero(min + index);
     return formatter(type, {
       text: value,

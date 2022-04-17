@@ -6,7 +6,11 @@ import * as components from '@/lib-components/index';
 // install function executed by Vue.use()
 const install: Exclude<Plugin['install'], undefined> = function installAbVue3(app: App) {
   Object.entries(components).forEach(([componentName, component]) => {
-    app.component(componentName, component);
+    if (componentName === 'image-preview' || componentName === 'calendar') {
+      console.log(componentName);
+    } else {
+      app.component(componentName, component);
+    }
   });
 };
 

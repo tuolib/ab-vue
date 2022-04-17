@@ -1,20 +1,8 @@
-import {
-  ref,
-  watch,
-  computed,
-  defineComponent,
-  type PropType,
-  type ExtractPropTypes,
-} from 'vue';
+import { ref, watch, computed, defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
 import { pick, extend, isDate, isSameValue, createNamespace } from '../utils';
-import {
-  genOptions,
-  sharedProps,
-  getMonthEndDay,
-  pickerInheritKeys,
-} from './utils';
+import { genOptions, sharedProps, getMonthEndDay, pickerInheritKeys } from './utils';
 
 // Components
 import { Picker } from '../picker';
@@ -56,18 +44,11 @@ export default defineComponent({
     const genYearOptions = () => {
       const minYear = props.minDate.getFullYear();
       const maxYear = props.maxDate.getFullYear();
-      return genOptions(
-        minYear,
-        maxYear,
-        'year',
-        props.formatter,
-        props.filter
-      );
+      return genOptions(minYear, maxYear, 'year', props.formatter, props.filter);
     };
 
     const isMaxYear = (year: number) => year === props.maxDate.getFullYear();
-    const isMaxMonth = (month: number) =>
-      month === props.maxDate.getMonth() + 1;
+    const isMaxMonth = (month: number) => month === props.maxDate.getMonth() + 1;
 
     const getValue = (type: DatePickerColumnType) => {
       const { minDate, columnsType } = props;
@@ -89,13 +70,7 @@ export default defineComponent({
 
     const genMonthOptions = () => {
       if (isMaxYear(getValue('year'))) {
-        return genOptions(
-          1,
-          props.maxDate.getMonth() + 1,
-          'month',
-          props.formatter,
-          props.filter
-        );
+        return genOptions(1, props.maxDate.getMonth() + 1, 'month', props.formatter, props.filter);
       }
       return genOptions(1, 12, 'month', props.formatter, props.filter);
     };
@@ -113,7 +88,7 @@ export default defineComponent({
     };
 
     const columns = computed(() =>
-      props.columnsType.map((type) => {
+      props.columnsType.map(type => {
         switch (type) {
           case 'year':
             return genYearOptions();
@@ -122,14 +97,12 @@ export default defineComponent({
           case 'day':
             return genDayOptions();
           default:
-            throw new Error(
-              `[Vant] DatePicker: unsupported columns type: ${type}`
-            );
+            throw new Error(`[Vant] DatePicker: unsupported columns type: ${type}`);
         }
-      })
+      }),
     );
 
-    watch(currentValues, (newValues) => {
+    watch(currentValues, newValues => {
       if (isSameValue(newValues, props.modelValue)) {
         emit('update:modelValue', newValues);
       }
@@ -137,11 +110,11 @@ export default defineComponent({
 
     watch(
       () => props.modelValue,
-      (newValues) => {
+      newValues => {
         if (!isSameValue(newValues, currentValues.value)) {
           currentValues.value = newValues;
         }
-      }
+      },
     );
 
     const onChange = (...args: unknown[]) => emit('change', ...args);

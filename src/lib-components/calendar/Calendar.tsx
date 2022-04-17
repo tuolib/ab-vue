@@ -46,12 +46,7 @@ import CalendarMonth from './CalendarMonth';
 import CalendarHeader from './CalendarHeader';
 
 // Types
-import type {
-  CalendarType,
-  CalendarExpose,
-  CalendarDayItem,
-  CalendarMonthInstance,
-} from './types';
+import type { CalendarType, CalendarExpose, CalendarDayItem, CalendarMonthInstance } from './types';
 
 const calendarProps = {
   show: Boolean,
@@ -119,11 +114,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const limitDateRange = (
-      date: Date,
-      minDate = props.minDate,
-      maxDate = props.maxDate
-    ) => {
+    const limitDateRange = (date: Date, minDate = props.minDate, maxDate = props.maxDate) => {
       if (compareDay(date, minDate) === -1) {
         return minDate;
       }
@@ -146,18 +137,14 @@ export default defineComponent({
         if (!Array.isArray(defaultDate)) {
           defaultDate = [];
         }
-        const start = limitDateRange(
-          defaultDate[0] || now,
-          minDate,
-          getPrevDay(maxDate)
-        );
+        const start = limitDateRange(defaultDate[0] || now, minDate, getPrevDay(maxDate));
         const end = limitDateRange(defaultDate[1] || now, getNextDay(minDate));
         return [start, end];
       }
 
       if (type === 'multiple') {
         if (Array.isArray(defaultDate)) {
-          return defaultDate.map((date) => limitDateRange(date));
+          return defaultDate.map(date => limitDateRange(date));
         }
         return [limitDateRange(now)];
       }
@@ -177,11 +164,10 @@ export default defineComponent({
 
     const [monthRefs, setMonthRefs] = useRefs<CalendarMonthInstance>();
 
-    const dayOffset = computed(() =>
-      props.firstDayOfWeek ? +props.firstDayOfWeek % 7 : 0
-    );
+    const dayOffset = computed(() => (props.firstDayOfWeek ? +props.firstDayOfWeek % 7 : 0));
 
     const months = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const months: Date[] = [];
       const cursor = new Date(props.minDate);
 
@@ -198,10 +184,7 @@ export default defineComponent({
     const buttonDisabled = computed(() => {
       if (currentDate.value) {
         if (props.type === 'range') {
-          return (
-            !(currentDate.value as Date[])[0] ||
-            !(currentDate.value as Date[])[1]
-          );
+          return !(currentDate.value as Date[])[0] || !(currentDate.value as Date[])[1];
         }
         if (props.type === 'multiple') {
           return !(currentDate.value as Date[]).length;
@@ -216,9 +199,7 @@ export default defineComponent({
       const top = getScrollTop(bodyRef.value!);
       const bottom = top + bodyHeight;
       // @ts-ignore
-      const heights = months.value.map((item, index) =>
-        monthRefs.value[index].getHeight()
-      );
+      const heights = months.value.map((item, index) => monthRefs.value[index].getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
@@ -256,8 +237,7 @@ export default defineComponent({
 
       // @ts-ignore
       months.value.forEach((month, index) => {
-        const visible =
-          index >= visibleRange[0] - 1 && index <= visibleRange[1] + 1;
+        const visible = index >= visibleRange[0] - 1 && index <= visibleRange[1] + 1;
         monthRefs.value[index].setVisible(visible);
       });
 
@@ -291,9 +271,7 @@ export default defineComponent({
 
       if (currentDate.value) {
         const targetDate =
-          props.type === 'single'
-            ? (currentDate.value as Date)
-            : (currentDate.value as Date[])[0];
+          props.type === 'single' ? (currentDate.value as Date) : (currentDate.value as Date[])[0];
         scrollToDate(targetDate);
       } else {
         raf(onScroll);
@@ -332,13 +310,13 @@ export default defineComponent({
       return true;
     };
 
-    const onConfirm = () =>
-      emit('confirm', currentDate.value ?? cloneDates(currentDate.value!));
+    const onConfirm = () => emit('confirm', currentDate.value ?? cloneDates(currentDate.value!));
 
     const select = (date: Date | Date[], complete?: boolean) => {
-      const setCurrentDate = (date: Date | Date[]) => {
-        currentDate.value = date;
-        emit('select', cloneDates(date));
+      // @ts-ignore
+      const setCurrentDate = (date1: Date | Date[]) => {
+        currentDate.value = date1;
+        emit('select', cloneDates(date1));
       };
 
       if (complete && props.type === 'range') {
@@ -365,20 +343,19 @@ export default defineComponent({
     const getDisabledDate = (
       disabledDays: CalendarDayItem[],
       startDay: Date,
-      date: Date
+      date: Date,
     ): Date | undefined =>
       disabledDays.find(
-        (day) =>
-          compareDay(startDay, day.date!) === -1 &&
-          compareDay(day.date!, date) === -1
+        day => compareDay(startDay, day.date!) === -1 && compareDay(day.date!, date) === -1,
       )?.date;
 
     // disabled calendarDay
     const disabledDays = computed(() =>
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       monthRefs.value.reduce((arr, ref) => {
         arr.push(...(ref.disabledDays?.value ?? []));
         return arr;
-      }, [] as CalendarDayItem[])
+      }, [] as CalendarDayItem[]),
     );
 
     const onClickDay = (item: CalendarDayItem) => {
@@ -401,13 +378,10 @@ export default defineComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            const disabledDay = getDisabledDate(
-              disabledDays.value,
-              startDay,
-              date
-            );
+            const disabledDay = getDisabledDate(disabledDays.value, startDay, date);
 
             if (disabledDay) {
+              // eslint-disable-next-line @typescript-eslint/no-shadow
               const endDay = getPrevDay(disabledDay);
               if (compareDay(startDay, endDay) === -1) {
                 select([startDay, endDay]);
@@ -432,9 +406,7 @@ export default defineComponent({
         }
         const dates = currentDate.value as Date[];
 
-        const selectedIndex = dates.findIndex(
-          (dateItem: Date) => compareDay(dateItem, date) === 0
-        );
+        const selectedIndex = dates.findIndex((dateItem: Date) => compareDay(dateItem, date) === 0);
 
         if (selectedIndex !== -1) {
           const [unselectedDate] = dates.splice(selectedIndex, 1);
@@ -505,12 +477,7 @@ export default defineComponent({
     };
 
     const renderFooter = () => (
-      <div
-        class={[
-          bem('footer'),
-          { 'van-safe-area-bottom': props.safeAreaInsetBottom },
-        ]}
-      >
+      <div class={[bem('footer'), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}>
         {renderFooterButton()}
       </div>
     );
@@ -536,14 +503,14 @@ export default defineComponent({
     watch(() => props.show, init);
     watch(
       () => [props.type, props.minDate, props.maxDate],
-      () => reset(getInitialDate(currentDate.value))
+      () => reset(getInitialDate(currentDate.value)),
     );
     watch(
       () => props.defaultDate,
       (value = null) => {
         currentDate.value = value;
         scrollToCurrentDate();
-      }
+      },
     );
 
     useExpose<CalendarExpose>({

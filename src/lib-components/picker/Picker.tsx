@@ -1,11 +1,4 @@
-import {
-  ref,
-  watch,
-  computed,
-  defineComponent,
-  type PropType,
-  type ExtractPropTypes,
-} from 'vue';
+import { ref, watch, computed, defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -87,9 +80,7 @@ export default defineComponent({
 
     const fields = computed(() => assignDefaultFields(props.columnsFieldNames));
     const optionHeight = computed(() => unitToPx(props.optionHeight));
-    const columnsType = computed(() =>
-      getColumnsType(props.columns, fields.value)
-    );
+    const columnsType = computed(() => getColumnsType(props.columns, fields.value));
 
     const currentColumns = computed<PickerColumn[]>(() => {
       const { columns } = props;
@@ -103,14 +94,12 @@ export default defineComponent({
       }
     });
 
-    const hasOptions = computed(() =>
-      currentColumns.value.some((options) => options.length)
-    );
+    const hasOptions = computed(() => currentColumns.value.some(options => options.length));
 
     const selectedOptions = computed(() =>
       currentColumns.value.map((options, index) =>
-        findOptionByValue(options, selectedValues.value[index], fields.value)
-      )
+        findOptionByValue(options, selectedValues.value[index], fields.value),
+      ),
     );
 
     const setValue = (index: number, value: Numeric) => {
@@ -126,13 +115,11 @@ export default defineComponent({
 
       if (columnsType.value === 'cascade') {
         // reset values after cascading
+        // eslint-disable-next-line @typescript-eslint/no-shadow
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
           if (!isOptionExist(options, value, fields.value)) {
-            setValue(
-              index,
-              options.length ? options[0][fields.value.value] : undefined
-            );
+            setValue(index, options.length ? options[0][fields.value.value] : undefined);
           }
         });
       }
@@ -145,7 +132,7 @@ export default defineComponent({
     };
 
     const confirm = () => {
-      children.forEach((child) => child.stopMomentum());
+      children.forEach(child => child.stopMomentum());
       emit('confirm', {
         selectedValues: selectedValues.value,
         selectedOptions: selectedOptions.value,
@@ -170,11 +157,7 @@ export default defineComponent({
     const renderCancel = () => {
       const text = props.cancelButtonText || t('cancel');
       return (
-        <button
-          type="button"
-          class={[bem('cancel'), HAPTICS_FEEDBACK]}
-          onClick={cancel}
-        >
+        <button type="button" class={[bem('cancel'), HAPTICS_FEEDBACK]} onClick={cancel}>
           {slots.cancel ? slots.cancel() : text}
         </button>
       );
@@ -183,11 +166,7 @@ export default defineComponent({
     const renderConfirm = () => {
       const text = props.confirmButtonText || t('confirm');
       return (
-        <button
-          type="button"
-          class={[bem('confirm'), HAPTICS_FEEDBACK]}
-          onClick={confirm}
-        >
+        <button type="button" class={[bem('confirm'), HAPTICS_FEEDBACK]} onClick={confirm}>
           {slots.confirm ? slots.confirm() : text}
         </button>
       );
@@ -197,9 +176,7 @@ export default defineComponent({
       if (props.showToolbar) {
         return (
           <div class={bem('toolbar')}>
-            {slots.toolbar
-              ? slots.toolbar()
-              : [renderCancel(), renderTitle(), renderConfirm()]}
+            {slots.toolbar ? slots.toolbar() : [renderCancel(), renderTitle(), renderConfirm()]}
           </div>
         );
       }
@@ -229,10 +206,7 @@ export default defineComponent({
         };
         return [
           <div class={bem('mask')} style={maskStyle} />,
-          <div
-            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
-            style={frameStyle}
-          />,
+          <div class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]} style={frameStyle} />,
         ];
       }
     };
@@ -241,11 +215,7 @@ export default defineComponent({
       const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
       return (
-        <div
-          class={bem('columns')}
-          style={columnsStyle}
-          onTouchmove={preventDefault}
-        >
+        <div class={bem('columns')} style={columnsStyle} onTouchmove={preventDefault}>
           {renderColumnItems()}
           {renderMask(wrapHeight)}
         </div>
@@ -254,39 +224,36 @@ export default defineComponent({
 
     watch(
       currentColumns,
-      (columns) => {
+      columns => {
         columns.forEach((options, index) => {
           if (
             options.length &&
             !isOptionExist(options, selectedValues.value[index], fields.value)
           ) {
-            setValue(
-              index,
-              getFirstEnabledOption(options)![fields.value.value]
-            );
+            setValue(index, getFirstEnabledOption(options)![fields.value.value]);
           }
         });
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     watch(
       () => props.modelValue,
-      (newValues) => {
+      newValues => {
         if (!isSameValue(newValues, selectedValues.value)) {
           selectedValues.value = newValues;
         }
       },
-      { deep: true }
+      { deep: true },
     );
     watch(
       selectedValues,
-      (newValues) => {
+      newValues => {
         if (!isSameValue(newValues, props.modelValue)) {
           emit('update:modelValue', newValues);
         }
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     const getSelectedOptions = () => selectedOptions.value;

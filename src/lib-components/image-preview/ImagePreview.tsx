@@ -41,12 +41,7 @@ import { ImagePreviewScaleEventParams } from './types';
 
 const [name, bem] = createNamespace('image-preview');
 
-const popupProps = [
-  'show',
-  'transition',
-  'overlayStyle',
-  'closeOnPopstate',
-] as const;
+const popupProps = ['show', 'transition', 'overlayStyle', 'closeOnPopstate'] as const;
 
 const imagePreviewProps = {
   show: Boolean,
@@ -97,8 +92,7 @@ export default defineComponent({
       }
     };
 
-    const emitScale = (args: ImagePreviewScaleEventParams) =>
-      emit('scale', args);
+    const emitScale = (args: ImagePreviewScaleEventParams) => emit('scale', args);
 
     const updateShow = (show: boolean) => emit('update:show', show);
 
@@ -146,7 +140,7 @@ export default defineComponent({
         indicatorColor="white"
         onChange={setActive}
       >
-        {props.images.map((image) => (
+        {props.images.map(image => (
           <ImagePreviewItem
             src={image}
             show={props.show}
@@ -169,10 +163,7 @@ export default defineComponent({
             role="button"
             // @ts-ignore
             name={props.closeIcon}
-            class={[
-              bem('close-icon', props.closeIconPosition),
-              HAPTICS_FEEDBACK,
-            ]}
+            class={[bem('close-icon', props.closeIconPosition), HAPTICS_FEEDBACK]}
             onClick={emitClose}
           />
         );
@@ -192,12 +183,12 @@ export default defineComponent({
 
     watch(
       () => props.startPosition,
-      (value) => setActive(+value)
+      value => setActive(+value),
     );
 
     watch(
       () => props.show,
-      (value) => {
+      value => {
         const { images, startPosition } = props;
         if (value) {
           setActive(+startPosition);
@@ -211,7 +202,7 @@ export default defineComponent({
             url: images[state.active],
           });
         }
-      }
+      },
     );
 
     return () => (

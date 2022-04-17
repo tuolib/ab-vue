@@ -1,10 +1,4 @@
-import {
-  ref,
-  watchEffect,
-  defineComponent,
-  type PropType,
-  type InjectionKey,
-} from 'vue';
+import { ref, watchEffect, defineComponent, type PropType, type InjectionKey } from 'vue';
 
 // Utils
 import {
@@ -24,11 +18,7 @@ import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
 // Types
-import type {
-  PickerOption,
-  PickerFieldNames,
-  PickerColumnProvide,
-} from './types';
+import type { PickerOption, PickerFieldNames, PickerColumnProvide } from './types';
 
 const DEFAULT_DURATION = 200;
 
@@ -72,8 +62,7 @@ export default defineComponent({
 
     const count = () => props.options.length;
 
-    const baseOffset = () =>
-      (props.optionHeight * (+props.visibleOptionNum - 1)) / 2;
+    const baseOffset = () => (props.optionHeight * (+props.visibleOptionNum - 1)) / 2;
 
     const updateValueByIndex = (index: number) => {
       const enabledIndex = findIndexOfEnabledOption(props.options, index);
@@ -112,8 +101,7 @@ export default defineComponent({
     const momentum = (distance: number, duration: number) => {
       const speed = Math.abs(distance / duration);
 
-      distance =
-        currentOffset.value + (speed / 0.003) * (distance < 0 ? -1 : 1);
+      distance = currentOffset.value + (speed / 0.003) * (distance < 0 ? -1 : 1);
 
       const index = getIndexByOffset(distance);
 
@@ -165,7 +153,7 @@ export default defineComponent({
       currentOffset.value = clamp(
         startOffset + touch.deltaY.value,
         -(count() * props.optionHeight),
-        props.optionHeight
+        props.optionHeight,
       );
 
       const now = Date.now();
@@ -182,8 +170,7 @@ export default defineComponent({
 
       const distance = currentOffset.value - momentumOffset;
       const duration = Date.now() - touchStartTime;
-      const startMomentum =
-        duration < MOMENTUM_TIME && Math.abs(distance) > MOMENTUM_DISTANCE;
+      const startMomentum = duration < MOMENTUM_TIME && Math.abs(distance) > MOMENTUM_DISTANCE;
 
       if (startMomentum) {
         momentum(distance, duration);
@@ -229,11 +216,7 @@ export default defineComponent({
           [props.allowHtml ? 'innerHTML' : 'textContent']: text,
         };
 
-        return (
-          <li {...data}>
-            {slots.option ? slots.option(option) : <div {...childData} />}
-          </li>
-        );
+        return <li {...data}>{slots.option ? slots.option(option) : <div {...childData} />}</li>;
       });
     };
 
@@ -241,9 +224,7 @@ export default defineComponent({
     useExpose({ stopMomentum });
 
     watchEffect(() => {
-      const index = props.options.findIndex(
-        (option) => option[props.fields.value] === props.value
-      );
+      const index = props.options.findIndex(option => option[props.fields.value] === props.value);
       const enabledIndex = findIndexOfEnabledOption(props.options, index);
       const offset = -enabledIndex * props.optionHeight;
       currentOffset.value = offset;
@@ -260,9 +241,7 @@ export default defineComponent({
         <ul
           ref={wrapper}
           style={{
-            transform: `translate3d(0, ${
-              currentOffset.value + baseOffset()
-            }px, 0)`,
+            transform: `translate3d(0, ${currentOffset.value + baseOffset()}px, 0)`,
             transitionDuration: `${currentDuration.value}ms`,
             transitionProperty: currentDuration.value ? 'all' : 'none',
           }}

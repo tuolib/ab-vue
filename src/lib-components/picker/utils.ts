@@ -2,14 +2,12 @@ import { isDef, clamp, extend, type Numeric } from '../utils';
 import type { Ref } from 'vue';
 import type { PickerOption, PickerColumn, PickerFieldNames } from './types';
 
-export const getFirstEnabledOption = (
-  options: PickerOption[]
-): PickerOption | undefined =>
-  options.find((option) => !option.disabled) || options[0];
+export const getFirstEnabledOption = (options: PickerOption[]): PickerOption | undefined =>
+  options.find(option => !option.disabled) || options[0];
 
 export function getColumnsType(
   columns: PickerColumn | PickerColumn[],
-  fields: Required<PickerFieldNames>
+  fields: Required<PickerFieldNames>,
 ) {
   const firstColumn = columns[0];
   if (firstColumn) {
@@ -23,10 +21,7 @@ export function getColumnsType(
   return 'default';
 }
 
-export function findIndexOfEnabledOption(
-  options: PickerOption[],
-  index: number
-) {
+export function findIndexOfEnabledOption(options: PickerOption[], index: number) {
   index = clamp(index, 0, options.length);
 
   for (let i = index; i < options.length; i++) {
@@ -42,17 +37,15 @@ export function findIndexOfEnabledOption(
 export const isOptionExist = (
   options: PickerOption[],
   value: Numeric | undefined,
-  fields: Required<PickerFieldNames>
-) =>
-  value !== undefined &&
-  !!options.find((option) => option[fields.value] === value);
+  fields: Required<PickerFieldNames>,
+) => value !== undefined && !!options.find(option => option[fields.value] === value);
 
 export function findOptionByValue(
   options: PickerOption[],
   value: Numeric,
-  fields: Required<PickerFieldNames>
+  fields: Required<PickerFieldNames>,
 ): PickerOption | undefined {
-  const index = options.findIndex((option) => option[fields.value] === value);
+  const index = options.findIndex(option => option[fields.value] === value);
   const enabledIndex = findIndexOfEnabledOption(options, index);
   return options[enabledIndex];
 }
@@ -60,7 +53,7 @@ export function findOptionByValue(
 export function formatCascadeColumns(
   columns: PickerColumn | PickerColumn[],
   fields: Required<PickerFieldNames>,
-  selectedValues: Ref<Numeric[]>
+  selectedValues: Ref<Numeric[]>,
 ) {
   const formatted: PickerColumn[] = [];
 
@@ -73,9 +66,7 @@ export function formatCascadeColumns(
     const options: PickerOption[] = cursor[fields.children];
     const value = selectedValues.value[columnIndex];
 
-    cursor = isDef(value)
-      ? findOptionByValue(options, value, fields)
-      : undefined;
+    cursor = isDef(value) ? findOptionByValue(options, value, fields) : undefined;
 
     if (!cursor && options.length) {
       const firstValue = getFirstEnabledOption(options)![fields.value];
@@ -96,7 +87,7 @@ export function getElementTranslateY(element: Element) {
 }
 
 export function assignDefaultFields(
-  fields: PickerFieldNames | undefined
+  fields: PickerFieldNames | undefined,
 ): Required<PickerFieldNames> {
   return extend(
     {
@@ -104,6 +95,6 @@ export function assignDefaultFields(
       value: 'value',
       children: 'children',
     },
-    fields
+    fields,
   );
 }

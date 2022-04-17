@@ -1,9 +1,4 @@
-import {
-  computed,
-  defineComponent,
-  type PropType,
-  type CSSProperties,
-} from 'vue';
+import { computed, defineComponent, type PropType, type CSSProperties } from 'vue';
 import { makeNumberProp, createNamespace, makeRequiredProp } from '../utils';
 import { bem } from './utils';
 import type { CalendarDayItem } from './types';
@@ -26,6 +21,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const style = computed(() => {
       const { item, index, color, offset, rowHeight } = props;
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const style: CSSProperties = {
         height: rowHeight,
       };
@@ -85,9 +81,7 @@ export default defineComponent({
       if (bottomInfo || slots['bottom-info']) {
         return (
           <div class={bem('bottom-info')}>
-            {slots['bottom-info']
-              ? slots['bottom-info'](props.item)
-              : bottomInfo}
+            {slots['bottom-info'] ? slots['bottom-info'](props.item) : bottomInfo}
           </div>
         );
       }

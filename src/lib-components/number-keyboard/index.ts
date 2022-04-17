@@ -3,10 +3,7 @@ import _NumberKeyboard from './NumberKeyboard';
 
 export const NumberKeyboard = _NumberKeyboard;
 export default NumberKeyboard;
-export type {
-  NumberKeyboardProps,
-  NumberKeyboardTheme,
-} from './NumberKeyboard';
+export type { NumberKeyboardProps, NumberKeyboardTheme } from './NumberKeyboard';
 
 declare module 'vue' {
   export interface GlobalComponents {

@@ -1,7 +1,7 @@
 import {
   computed,
   defineComponent,
-  type PropType,
+  // type PropType,
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
@@ -68,6 +68,7 @@ export default defineComponent({
       return style;
     });
 
+    // eslint-disable-next-line vue/return-in-computed-property
     const contentStyle = computed(() => {
       const { square, gutter } = parent.props;
 

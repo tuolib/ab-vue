@@ -81,6 +81,7 @@ export default defineComponent({
 
     linkChildren({ props });
 
+    // eslint-disable-next-line vue/return-in-computed-property
     const sidebarStyle = computed<CSSProperties | undefined>(() => {
       if (isDef(props.zIndex)) {
         return {
@@ -89,6 +90,7 @@ export default defineComponent({
       }
     });
 
+    // eslint-disable-next-line vue/return-in-computed-property
     const highlightStyle = computed<CSSProperties | undefined>(() => {
       if (props.highlightColor) {
         return {

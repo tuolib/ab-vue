@@ -1,19 +1,7 @@
-import {
-  watch,
-  computed,
-  reactive,
-  defineComponent,
-  type CSSProperties,
-} from 'vue';
+import { watch, computed, reactive, defineComponent, type CSSProperties } from 'vue';
 
 // Utils
-import {
-  clamp,
-  numericProp,
-  preventDefault,
-  createNamespace,
-  makeRequiredProp,
-} from '../utils';
+import { clamp, numericProp, preventDefault, createNamespace, makeRequiredProp } from '../utils';
 
 // Composables
 import { useTouch } from '../composables/use-touch';
@@ -25,8 +13,7 @@ import { SwipeItem } from '../swipe-item';
 
 const getDistance = (touches: TouchList) =>
   Math.sqrt(
-    (touches[0].clientX - touches[1].clientX) ** 2 +
-      (touches[0].clientY - touches[1].clientY) ** 2
+    (touches[0].clientX - touches[1].clientX) ** 2 + (touches[0].clientY - touches[1].clientY) ** 2,
   );
 
 const bem = createNamespace('image-preview')[1];
@@ -82,9 +69,7 @@ export default defineComponent({
     const maxMoveX = computed(() => {
       if (state.imageRatio) {
         const { rootWidth, rootHeight } = props;
-        const displayWidth = vertical.value
-          ? rootHeight / state.imageRatio
-          : rootWidth;
+        const displayWidth = vertical.value ? rootHeight / state.imageRatio : rootWidth;
 
         return Math.max(0, (state.scale * displayWidth - rootWidth) / 2);
       }
@@ -95,9 +80,7 @@ export default defineComponent({
     const maxMoveY = computed(() => {
       if (state.imageRatio) {
         const { rootWidth, rootHeight } = props;
-        const displayHeight = vertical.value
-          ? rootHeight
-          : rootWidth * state.imageRatio;
+        const displayHeight = vertical.value ? rootHeight : rootWidth * state.imageRatio;
 
         return Math.max(0, (state.scale * displayHeight - rootHeight) / 2);
       }
@@ -136,6 +119,7 @@ export default defineComponent({
     let startMoveY: number;
     let startScale: number;
     let startDistance: number;
+    // eslint-disable-next-line no-undef
     let doubleTapTimer: NodeJS.Timeout | null;
     let touchStartTime: number;
 
@@ -194,11 +178,7 @@ export default defineComponent({
       const TAP_TIME = 250;
       const TAP_OFFSET = 5;
 
-      if (
-        offsetX.value < TAP_OFFSET &&
-        offsetY.value < TAP_OFFSET &&
-        deltaTime < TAP_TIME
-      ) {
+      if (offsetX.value < TAP_OFFSET && offsetY.value < TAP_OFFSET && deltaTime < TAP_TIME) {
         if (doubleTapTimer) {
           clearTimeout(doubleTapTimer);
           doubleTapTimer = null;
@@ -219,11 +199,7 @@ export default defineComponent({
       if (state.moving || state.zooming) {
         stopPropagation = true;
 
-        if (
-          state.moving &&
-          startMoveX === state.moveX &&
-          startMoveY === state.moveY
-        ) {
+        if (state.moving && startMoveX === state.moveX && startMoveY === state.moveY) {
           stopPropagation = false;
         }
 
@@ -264,11 +240,11 @@ export default defineComponent({
     watch(() => props.active, resetScale);
     watch(
       () => props.show,
-      (value) => {
+      value => {
         if (!value) {
           resetScale();
         }
-      }
+      },
     );
 
     return () => {

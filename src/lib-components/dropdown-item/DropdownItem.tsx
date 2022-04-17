@@ -53,6 +53,7 @@ export default defineComponent({
       return;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     const getEmitter = (name: 'open' | 'close' | 'opened') => () => emit(name);
     const onOpen = getEmitter('open');
     const onClose = getEmitter('close');

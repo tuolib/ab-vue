@@ -50,6 +50,7 @@ export default defineComponent({
 
     const isSticky = () => state.active && parent.props.sticky;
 
+    // eslint-disable-next-line vue/return-in-computed-property
     const anchorStyle = computed<CSSProperties | undefined>(() => {
       const { zIndex, highlightColor } = parent.props;
 

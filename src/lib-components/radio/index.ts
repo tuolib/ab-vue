@@ -1,7 +1,7 @@
-import { withInstall } from '../utils';
+// import { withInstall } from '../utils';
 import _Radio from './Radio';
 
-export const Radio = withInstall(_Radio);
+export const Radio = _Radio;
 export default Radio;
 export type { RadioProps, RadioShape, RadioLabelPosition } from './Radio';
 

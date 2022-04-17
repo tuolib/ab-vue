@@ -67,6 +67,7 @@ export default defineComponent({
     const { $Lazyload } = getCurrentInstance()!.proxy!;
 
     const style = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const style: CSSProperties = {
         width: addUnit(props.width),
         height: addUnit(props.height),
@@ -99,6 +100,7 @@ export default defineComponent({
       emit('error', event);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     const renderIcon = (name: string, className: unknown, slot?: Slot) => {
       if (slot) {
         return slot();

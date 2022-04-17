@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "",
   "license": "ISC",
   "main": "dist/cjs/entry.js",
@@ -48,6 +48,7 @@
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,ts,tsx,css,less,scss,vue,html,md}\""
   },
   "dependencies": {
+    "@vant/popperjs": "^1.1.0",
     "@vant/use": "^1.3.6",
     "@vue/runtime-core": "^3.2.31",
     "@vue/shared": "^3.2.31",

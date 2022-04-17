@@ -1,4 +1,8 @@
-import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
+import {
+  defineComponent,
+  // type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { extend, numericProp, createNamespace } from '../utils';
@@ -18,7 +22,6 @@ const sidebarItemProps = extend({}, routeProps, {
   title: String,
   badge: numericProp,
   disabled: Boolean,
-  badgeProps: Object as PropType<Partial<BadgeProps>>,
 });
 
 export type SidebarItemProps = ExtractPropTypes<typeof sidebarItemProps>;
@@ -52,7 +55,7 @@ export default defineComponent({
     };
 
     return () => {
-      const { dot, badge, title, disabled } = props;
+      const { title, disabled } = props;
       const selected = index.value === parent.getActive();
 
       return (
@@ -63,9 +66,7 @@ export default defineComponent({
           aria-selected={selected}
           onClick={onClick}
         >
-          <div dot={dot} class={bem('text')} content={badge} {...props.badgeProps}>
-            {slots.title ? slots.title() : title}
-          </div>
+          <div class={bem('text')}>{slots.title ? slots.title() : title}</div>
         </div>
       );
     };

@@ -1,10 +1,4 @@
-import {
-  ref,
-  computed,
-  defineComponent,
-  type PropType,
-  type ExtractPropTypes,
-} from 'vue';
+import { ref, computed, defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -16,14 +10,7 @@ import {
   makeRequiredProp,
 } from '../utils';
 import { getMonthEndDay } from '../date-picker/utils';
-import {
-  t,
-  bem,
-  compareDay,
-  getPrevDay,
-  getNextDay,
-  formatMonthTitle,
-} from './utils';
+import { t, bem, compareDay, getPrevDay, getNextDay, formatMonthTitle } from './utils';
 
 // Composables
 import { useRect, useToggle } from '@vant/use';
@@ -82,7 +69,7 @@ export default defineComponent({
     });
 
     const totalDay = computed(() =>
-      getMonthEndDay(props.date.getFullYear(), props.date.getMonth() + 1)
+      getMonthEndDay(props.date.getFullYear(), props.date.getMonth() + 1),
     );
 
     const shouldRender = computed(() => visible.value || !props.lazyRender);
@@ -91,9 +78,7 @@ export default defineComponent({
 
     const getMultipleDayType = (day: Date) => {
       const isSelected = (date: Date) =>
-        (props.currentDate as Date[]).some(
-          (item) => compareDay(item, date) === 0
-        );
+        (props.currentDate as Date[]).some(item => compareDay(item, date) === 0);
 
       if (isSelected(day)) {
         const prevDay = getPrevDay(day);
@@ -201,6 +186,7 @@ export default defineComponent({
     });
 
     const days = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const days: CalendarDayItem[] = [];
       const year = props.date.getFullYear();
       const month = props.date.getMonth();
@@ -226,9 +212,7 @@ export default defineComponent({
       return days;
     });
 
-    const disabledDays = computed(() =>
-      days.value.filter((day) => day.type === 'disabled')
-    );
+    const disabledDays = computed(() => days.value.filter(day => day.type === 'disabled'));
 
     const scrollToDate = (body: Element, targetDate: Date) => {
       if (daysRef.value) {
@@ -237,10 +221,7 @@ export default defineComponent({
         const currentRow = Math.ceil((targetDate.getDate() + offset.value) / 7);
         const rowOffset = ((currentRow - 1) * daysRect.height) / totalRows;
 
-        setScrollTop(
-          body,
-          daysRect.top + rowOffset + body.scrollTop - useRect(body).top
-        );
+        setScrollTop(body, daysRect.top + rowOffset + body.scrollTop - useRect(body).top);
       }
     };
 
@@ -252,7 +233,8 @@ export default defineComponent({
         color={props.color}
         offset={offset.value}
         rowHeight={rowHeight.value}
-        onClick={(item) => emit('click', item)}
+        // eslint-disable-next-line @typescript-eslint/no-shadow
+        onClick={item => emit('click', item)}
       />
     );
 

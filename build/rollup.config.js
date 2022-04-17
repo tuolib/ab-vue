@@ -13,8 +13,8 @@ import { terser } from 'rollup-plugin-terser';
 import ttypescript from 'ttypescript';
 import typescript from 'rollup-plugin-typescript2';
 import minimist from 'minimist';
-import multiInput from 'rollup-plugin-multi-input';
-import typescriptPlugin from '@rollup/plugin-typescript';
+// import multiInput from 'rollup-plugin-multi-input';
+// import typescriptPlugin from '@rollup/plugin-typescript';
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // Get browserslist config and remove ie from es build targets

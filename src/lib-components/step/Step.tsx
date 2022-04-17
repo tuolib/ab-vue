@@ -42,6 +42,7 @@ export default defineComponent({
       background: getStatus() === 'finish' ? parentProps.activeColor : parentProps.inactiveColor,
     }));
 
+    // eslint-disable-next-line vue/return-in-computed-property
     const titleStyle = computed(() => {
       if (isActive()) {
         return { color: parentProps.activeColor };
@@ -54,7 +55,7 @@ export default defineComponent({
     const onClickStep = () => parent.onClickStep(index.value);
 
     const renderCircle = () => {
-      const { iconPrefix, finishIcon, activeIcon, activeColor, inactiveIcon } = parentProps;
+      const { finishIcon, activeColor, inactiveIcon } = parentProps;
 
       if (isActive()) {
         if (slots['active-icon']) {
