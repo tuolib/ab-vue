@@ -12,8 +12,8 @@ const [name, bem] = createNamespace('swipe-item');
 
 export default defineComponent({
   name,
+  // @ts-ignore
   setup(props, { slots }) {
-    console.log(props);
     let rendered: boolean;
     const state = reactive({
       offset: 0,
