@@ -29,6 +29,7 @@ import SkeletonDemo from '../src/lib-components/skeleton/demo/index.vue';
 import PullRefreshDemo from '../src/lib-components/pull-refresh/demo/index.vue';
 import NavBarDemo from '../src/lib-components/nav-bar/demo/index.vue';
 import TabbarDemo from '../src/lib-components/tabbar/demo/index.vue';
+import ImagePreviewDemo from '../src/lib-components/image-preview/demo/index.vue';
 
 export default defineComponent({
   name: 'ServeDev',
@@ -51,6 +52,7 @@ export default defineComponent({
     PullRefreshDemo,
     NavBarDemo,
     TabbarDemo,
+    ImagePreviewDemo,
   },
   setup() {
     const showDemo = ref('');
@@ -110,6 +112,9 @@ export default defineComponent({
       </div>
       <div class="blockDemo">
         <Cell title="TabbarDemo 例子：" @click="setShow('TabbarDemo')" />
+      </div>
+      <div class="blockDemo">
+        <Cell title="ImagePreviewDemo 例子：" @click="setShow('ImagePreviewDemo')" />
       </div>
     </div>
     <div v-else class="showContent">

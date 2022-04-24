@@ -2,9 +2,11 @@
 import VanCell from '../../cell';
 import { ImagePreview, ImagePreviewOptions } from '..';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site';
+import { useTranslate } from '../../utils/use-translate';
 import { Toast } from '../../toast';
-
+import '../../cell/style';
+import '../../toast/style';
+import '../style';
 const VanImagePreview = ImagePreview.Component;
 
 const t = useTranslate({
@@ -33,10 +35,10 @@ const t = useTranslate({
 });
 
 const images = [
-  cdnURL('apple-1.jpeg'),
-  cdnURL('apple-2.jpeg'),
-  cdnURL('apple-3.jpeg'),
-  cdnURL('apple-4.jpeg'),
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
 ];
 
 const show = ref(false);
@@ -45,7 +47,7 @@ const index = ref(0);
 const onClose = () => Toast(t('closed'));
 
 const beforeClose = () =>
-  new Promise<boolean>((resolve) => {
+  new Promise<boolean>(resolve => {
     setTimeout(() => {
       resolve(true);
     }, 1000);
@@ -79,29 +81,13 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
   </demo-block>
 
   <demo-block card :title="t('customConfig')">
-    <van-cell
-      is-link
-      :value="t('startPosition')"
-      @click="showImagePreview({ startPosition: 1 })"
-    />
-    <van-cell
-      is-link
-      :value="t('showClose')"
-      @click="showImagePreview({ closeable: true })"
-    />
-    <van-cell
-      is-link
-      :value="t('closeEvent')"
-      @click="showImagePreview({ onClose })"
-    />
+    <van-cell is-link :value="t('startPosition')" @click="showImagePreview({ startPosition: 1 })" />
+    <van-cell is-link :value="t('showClose')" @click="showImagePreview({ closeable: true })" />
+    <van-cell is-link :value="t('closeEvent')" @click="showImagePreview({ onClose })" />
   </demo-block>
 
   <demo-block card :title="t('beforeClose')">
-    <van-cell
-      is-link
-      :value="t('beforeClose')"
-      @click="showImagePreview({ beforeClose })"
-    />
+    <van-cell is-link :value="t('beforeClose')" @click="showImagePreview({ beforeClose })" />
   </demo-block>
 
   <demo-block card :title="t('componentCall')">

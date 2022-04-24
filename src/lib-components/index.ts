@@ -50,7 +50,7 @@ export { default as Collapse } from './collapse';
 export { default as CountDown } from './count-down';
 export { default as Divider } from './divider';
 export { default as Image } from './image';
-// export { default as ImagePreview } from './image-preview';
+export { default as ImagePreview } from './image-preview';
 export { default as Popover } from './popover';
 export { default as Progress } from './progress';
 export { default as Step } from './step';
