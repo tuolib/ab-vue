@@ -212,7 +212,7 @@ export default defineComponent({
         };
 
         const childData = {
-          class: 'van-ellipsis',
+          class: 'abv-ellipsis',
           [props.allowHtml ? 'innerHTML' : 'textContent']: text,
         };
 
