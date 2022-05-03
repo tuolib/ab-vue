@@ -1,0 +1,49 @@
+body {
+  --abv-circle-size: 100px;
+  --abv-circle-color: var(--abv-primary-color);
+  --abv-circle-layer-color: var(--abv-white);
+  --abv-circle-text-color: var(--abv-text-color);
+  --abv-circle-text-font-weight: var(--abv-font-bold);
+  --abv-circle-text-font-size: var(--abv-font-size-md);
+  --abv-circle-text-line-height: var(--abv-line-height-md);
+}
+
+.abv-circle {
+  position: relative;
+  display: inline-block;
+  width: var(--abv-circle-size);
+  height: var(--abv-circle-size);
+  text-align: center;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__layer {
+    stroke: var(--abv-circle-layer-color);
+  }
+
+  &__hover {
+    fill: none;
+    stroke: var(--abv-circle-color);
+    stroke-linecap: round;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 var(--abv-padding-base);
+    color: var(--abv-circle-text-color);
+    font-weight: var(--abv-circle-text-font-weight);
+    font-size: var(--abv-circle-text-font-size);
+    line-height: var(--abv-circle-text-line-height);
+    transform: translateY(-50%);
+  }
+}

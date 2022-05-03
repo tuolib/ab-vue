@@ -62,3 +62,4 @@ export { default as IndexBar } from './index-bar';
 export { default as TreeSelect } from './tree-select';
 export { default as Sidebar } from './sidebar';
 export { default as SidebarItem } from './sidebar-item';
+export { default as Circle } from './circle';
