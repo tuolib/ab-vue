@@ -150,7 +150,7 @@ export default defineComponent({
         return slots.title();
       }
       if (props.title) {
-        return <div class={[bem('title'), 'van-ellipsis']}>{props.title}</div>;
+        return <div class={[bem('title'), 'abv-ellipsis']}>{props.title}</div>;
       }
     };
 

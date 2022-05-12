@@ -206,7 +206,7 @@ export default defineComponent({
           ref={popoverRef}
           class={bem([props.theme])}
           position={''}
-          transition="van-popover-zoom"
+          transition="abv-popover-zoom"
           lockScroll={false}
           // @ts-ignore
           onTouchstart={onTouchstart}

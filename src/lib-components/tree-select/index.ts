@@ -7,6 +7,6 @@ export type { TreeSelectItem, TreeSelectChild, TreeSelectProps } from './TreeSel
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanTreeSelect: typeof TreeSelect;
+    AbvTreeSelect: typeof TreeSelect;
   }
 }

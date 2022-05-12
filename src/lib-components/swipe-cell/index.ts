@@ -8,6 +8,6 @@ export type { SwipeCellSide, SwipeCellPosition, SwipeCellInstance } from './type
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanSwipeCell: typeof SwipeCell;
+    AbvSwipeCell: typeof SwipeCell;
   }
 }

@@ -80,7 +80,7 @@ export default defineComponent({
             bem({ fixed }),
             {
               [BORDER_BOTTOM]: border,
-              'van-safe-area-top': props.safeAreaInsetTop,
+              'abv-safe-area-top': props.safeAreaInsetTop,
             },
           ]}
         >
@@ -90,7 +90,7 @@ export default defineComponent({
                 {renderLeft()}
               </div>
             )}
-            <div class={[bem('title'), 'van-ellipsis']}>{slots.title ? slots.title() : title}</div>
+            <div class={[bem('title'), 'abv-ellipsis']}>{slots.title ? slots.title() : title}</div>
             {hasRight && (
               <div class={[bem('right'), HAPTICS_FEEDBACK]} onClick={onClickRight}>
                 {renderRight()}

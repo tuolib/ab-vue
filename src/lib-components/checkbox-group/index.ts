@@ -12,6 +12,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanCheckboxGroup: typeof CheckboxGroup;
+    AbvCheckboxGroup: typeof CheckboxGroup;
   }
 }

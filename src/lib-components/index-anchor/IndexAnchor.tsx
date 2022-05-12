@@ -43,7 +43,7 @@ export default defineComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] <IndexAnchor> must be a child component of <IndexBar>.');
+        console.error('[Abv] <IndexAnchor> must be a child component of <IndexBar>.');
       }
       return;
     }

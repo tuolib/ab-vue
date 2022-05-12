@@ -477,7 +477,7 @@ export default defineComponent({
     };
 
     const renderFooter = () => (
-      <div class={[bem('footer'), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}>
+      <div class={[bem('footer'), { 'abv-safe-area-bottom': props.safeAreaInsetBottom }]}>
         {renderFooterButton()}
       </div>
     );

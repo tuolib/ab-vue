@@ -7,6 +7,6 @@ export type { PasswordInputProps } from './PasswordInput';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanPasswordInput: typeof PasswordInput;
+    AbvPasswordInput: typeof PasswordInput;
   }
 }

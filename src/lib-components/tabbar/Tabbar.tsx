@@ -69,7 +69,7 @@ export default defineComponent({
             bem({ fixed }),
             {
               [BORDER_TOP_BOTTOM]: border,
-              'van-safe-area-bottom': enableSafeArea(),
+              'abv-safe-area-bottom': enableSafeArea(),
             },
           ]}
         >

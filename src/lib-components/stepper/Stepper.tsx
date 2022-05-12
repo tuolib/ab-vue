@@ -238,7 +238,6 @@ export default defineComponent({
 
     const onMousedown = (event: MouseEvent) => {
       // fix mobile safari page scroll down issue
-      // see: https://github.com/youzan/vant/issues/7690
       if (props.disableInput) {
         preventDefault(event);
       }

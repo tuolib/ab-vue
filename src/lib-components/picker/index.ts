@@ -17,6 +17,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanPicker: typeof Picker;
+    AbvPicker: typeof Picker;
   }
 }

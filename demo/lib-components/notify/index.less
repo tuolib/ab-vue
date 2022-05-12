@@ -1,0 +1,42 @@
+body {
+  --abv-notify-text-color: var(--abv-white);
+  --abv-notify-padding: var(--abv-padding-xs) var(--abv-padding-md);
+  --abv-notify-font-size: var(--abv-font-size-md);
+  --abv-notify-line-height: var(--abv-line-height-md);
+  --abv-notify-primary-background: var(--abv-primary-color);
+  --abv-notify-success-background: var(--abv-success-color);
+  --abv-notify-danger-background: var(--abv-danger-color);
+  --abv-notify-warning-background: var(--abv-warning-color);
+}
+
+.abv-notify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--abv-notify-padding);
+  color: var(--abv-notify-text-color);
+  font-size: var(--abv-notify-font-size);
+  line-height: var(--abv-notify-line-height);
+
+  // allow newline character
+  white-space: pre-wrap;
+  text-align: center;
+  word-wrap: break-word;
+
+  &--primary {
+    background: var(--abv-notify-primary-background);
+  }
+
+  &--success {
+    background: var(--abv-notify-success-background);
+  }
+
+  &--danger {
+    background: var(--abv-notify-danger-background);
+  }
+
+  &--warning {
+    background: var(--abv-notify-warning-background);
+  }
+}

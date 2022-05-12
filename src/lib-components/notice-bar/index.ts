@@ -8,6 +8,6 @@ export type { NoticeBarMode, NoticeBarInstance } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanNoticeBar: typeof NoticeBar;
+    AbvNoticeBar: typeof NoticeBar;
   }
 }

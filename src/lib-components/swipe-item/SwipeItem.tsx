@@ -25,7 +25,7 @@ export default defineComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] <SwipeItem> must be a child component of <Swipe>.');
+        console.error('[Abv] <SwipeItem> must be a child component of <Swipe>.');
       }
       return;
     }

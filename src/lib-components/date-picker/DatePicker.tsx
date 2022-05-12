@@ -97,7 +97,7 @@ export default defineComponent({
           case 'day':
             return genDayOptions();
           default:
-            throw new Error(`[Vant] DatePicker: unsupported columns type: ${type}`);
+            throw new Error(`[Abv] DatePicker: unsupported columns type: ${type}`);
         }
       }),
     );

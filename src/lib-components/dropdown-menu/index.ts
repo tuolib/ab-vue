@@ -8,6 +8,6 @@ export type { DropdownMenuDirection } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanDropdownMenu: typeof DropdownMenu;
+    AbvDropdownMenu: typeof DropdownMenu;
   }
 }

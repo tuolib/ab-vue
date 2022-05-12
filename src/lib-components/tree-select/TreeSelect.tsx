@@ -86,7 +86,7 @@ export default defineComponent({
         <div
           key={item.id}
           class={[
-            'van-ellipsis',
+            'abv-ellipsis',
             bem('item', {
               active: isActiveItem(item.id),
               disabled: item.disabled,

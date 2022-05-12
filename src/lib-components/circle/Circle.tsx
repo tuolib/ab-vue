@@ -60,7 +60,7 @@ export default defineComponent({
   emits: ['update:currentRate'],
 
   setup(props, { emit, slots }) {
-    const id = `van-circle-${uid++}`;
+    const id = `abv-circle-${uid++}`;
 
     const viewBoxSize = computed(() => +props.strokeWidth + 1000);
 

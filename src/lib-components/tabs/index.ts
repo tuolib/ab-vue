@@ -8,6 +8,6 @@ export type { TabsType, TabsInstance } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanTabs: typeof Tabs;
+    AbvTabs: typeof Tabs;
   }
 }

@@ -134,7 +134,7 @@ export default class ReactiveListener {
 
         if (process.env.NODE_ENV !== 'production' && !this.options.silent)
           console.warn(
-            `[@vant/lazyload] load failed with loading image(${this.loading})`
+            `[@Abv/lazyload] load failed with loading image(${this.loading})`
           );
       }
     );
@@ -148,7 +148,7 @@ export default class ReactiveListener {
     if (this.attempt > this.options.attempt - 1 && this.state.error) {
       if (process.env.NODE_ENV !== 'production' && !this.options.silent) {
         console.log(
-          `[@vant/lazyload] ${this.src} tried too more than ${this.options.attempt} times`
+          `[@Abv/lazyload] ${this.src} tried too more than ${this.options.attempt} times`
         );
       }
 

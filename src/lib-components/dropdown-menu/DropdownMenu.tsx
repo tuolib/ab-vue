@@ -123,7 +123,7 @@ export default defineComponent({
             ]}
             style={{ color: showPopup ? props.activeColor : '' }}
           >
-            <div class="van-ellipsis">{item.renderTitle()}</div>
+            <div class="abv-ellipsis">{item.renderTitle()}</div>
           </span>
         </div>
       );

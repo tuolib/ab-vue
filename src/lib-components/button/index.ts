@@ -9,6 +9,6 @@ export type { ButtonType, ButtonSize, ButtonNativeType, ButtonIconPosition } fro
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanButton: typeof Button;
+    AbvButton: typeof Button;
   }
 }

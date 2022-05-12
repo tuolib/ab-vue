@@ -7,6 +7,6 @@ export type { OverlayProps } from './Overlay';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanOverlay: typeof Overlay;
+    AbvOverlay: typeof Overlay;
   }
 }

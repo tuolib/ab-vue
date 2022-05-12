@@ -21,6 +21,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanField: typeof Field;
+    AbvField: typeof Field;
   }
 }

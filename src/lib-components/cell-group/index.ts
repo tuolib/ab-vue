@@ -7,6 +7,6 @@ export type { CellGroupProps } from './CellGroup';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanCellGroup: typeof CellGroup;
+    AbvCellGroup: typeof CellGroup;
   }
 }

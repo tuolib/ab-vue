@@ -474,7 +474,7 @@ export default function () {
           !value.src &&
           !this.options.silent
         ) {
-          console.error('[@vant/lazyload] miss src with ' + value);
+          console.error('[@Abv/lazyload] miss src with ' + value);
         }
 
         ({ src } = value);

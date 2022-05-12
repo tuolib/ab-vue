@@ -7,6 +7,6 @@ export type { RadioProps, RadioShape, RadioLabelPosition } from './Radio';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanRadio: typeof Radio;
+    AbvRadio: typeof Radio;
   }
 }

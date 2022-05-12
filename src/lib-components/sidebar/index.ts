@@ -7,6 +7,6 @@ export type { SidebarProps } from './Sidebar';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanSidebar: typeof Sidebar;
+    AbvSidebar: typeof Sidebar;
   }
 }

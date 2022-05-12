@@ -8,6 +8,6 @@ export type { CollapseItemInstance } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanCollapseItem: typeof CollapseItem;
+    AbvCollapseItem: typeof CollapseItem;
   }
 }

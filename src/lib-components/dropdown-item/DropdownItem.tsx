@@ -48,7 +48,7 @@ export default defineComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] <DropdownItem> must be a child component of <DropdownMenu>.');
+        console.error('[Abv] <DropdownItem> must be a child component of <DropdownMenu>.');
       }
       return;
     }

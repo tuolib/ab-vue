@@ -116,7 +116,7 @@ export default defineComponent({
       return (
         <div class={bem('file')} style={getSizeStyle(props.previewSize)}>
           <span class={bem('file-icon')} />
-          <div class={[bem('file-name'), 'van-ellipsis']}>
+          <div class={[bem('file-name'), 'abv-ellipsis']}>
             {item.file ? item.file.name : item.url}
           </div>
           {renderCover()}

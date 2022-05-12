@@ -242,7 +242,6 @@ export default defineComponent({
     };
 
     // native maxlength have incorrect line-break counting
-    // see: https://github.com/youzan/vant/issues/5033
     const limitValueLength = (value: string) => {
       const { maxlength } = props;
       if (isDef(maxlength) && getStringLength(value) > maxlength) {

@@ -7,6 +7,6 @@ export type { GridProps, GridDirection } from './Grid';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanGrid: typeof Grid;
+    AbvGrid: typeof Grid;
   }
 }

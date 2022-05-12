@@ -39,7 +39,7 @@ export default defineComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] <CollapseItem> must be a child component of <Collapse>.');
+        console.error('[Abv] <CollapseItem> must be a child component of <Collapse>.');
       }
       return;
     }

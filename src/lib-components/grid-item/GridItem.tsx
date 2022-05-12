@@ -42,7 +42,7 @@ export default defineComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] <GridItem> must be a child component of <Grid>.');
+        console.error('[Abv] <GridItem> must be a child component of <Grid>.');
       }
       return;
     }

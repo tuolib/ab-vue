@@ -24,11 +24,11 @@ export type CollapseProps = ExtractPropTypes<typeof collapseProps>;
 
 function validateModelValue(modelValue: Numeric | Numeric[], accordion: boolean) {
   if (accordion && Array.isArray(modelValue)) {
-    console.error('[Vant] Collapse: "v-model" should not be Array in accordion mode');
+    console.error('[Abv] Collapse: "v-model" should not be Array in accordion mode');
     return false;
   }
   if (!accordion && !Array.isArray(modelValue)) {
-    console.error('[Vant] Collapse: "v-model" should be Array in non-accordion mode');
+    console.error('[Abv] Collapse: "v-model" should be Array in non-accordion mode');
     return false;
   }
   return true;

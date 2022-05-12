@@ -1,0 +1,241 @@
+body {
+  --abv-button-mini-height: 24px;
+  --abv-button-mini-padding: 0 var(--abv-padding-base);
+  --abv-button-mini-font-size: var(--abv-font-size-xs);
+  --abv-button-small-height: 32px;
+  --abv-button-small-padding: 0 var(--abv-padding-xs);
+  --abv-button-small-font-size: var(--abv-font-size-sm);
+  --abv-button-normal-padding: 0 15px;
+  --abv-button-normal-font-size: var(--abv-font-size-md);
+  --abv-button-large-height: 50px;
+  --abv-button-default-height: 44px;
+  --abv-button-default-line-height: 1.2;
+  --abv-button-default-font-size: var(--abv-font-size-lg);
+  --abv-button-default-color: var(--abv-text-color);
+  --abv-button-default-background: var(--abv-background-2);
+  --abv-button-default-border-color: var(--abv-gray-4);
+  --abv-button-primary-color: var(--abv-white);
+  --abv-button-primary-background: var(--abv-primary-color);
+  --abv-button-primary-border-color: var(--abv-primary-color);
+  --abv-button-success-color: var(--abv-white);
+  --abv-button-success-background: var(--abv-success-color);
+  --abv-button-success-border-color: var(--abv-success-color);
+  --abv-button-danger-color: var(--abv-white);
+  --abv-button-danger-background: var(--abv-danger-color);
+  --abv-button-danger-border-color: var(--abv-danger-color);
+  --abv-button-warning-color: var(--abv-white);
+  --abv-button-warning-background: var(--abv-warning-color);
+  --abv-button-warning-border-color: var(--abv-warning-color);
+  --abv-button-border-width: var(--abv-border-width);
+  --abv-button-radius: var(--abv-radius-md);
+  --abv-button-round-radius: var(--abv-radius-max);
+  --abv-button-plain-background: var(--abv-white);
+  --abv-button-disabled-opacity: var(--abv-disabled-opacity);
+  --abv-button-icon-size: 1.2em;
+  --abv-button-loading-icon-size: 20px;
+}
+
+.abv-theme-dark {
+  --abv-button-plain-background: transparent;
+}
+
+.abv-button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: var(--abv-button-default-height);
+  margin: 0;
+  padding: 0;
+  font-size: var(--abv-button-default-font-size);
+  line-height: var(--abv-button-default-line-height);
+  text-align: center;
+  border-radius: var(--abv-button-radius);
+  cursor: pointer;
+  transition: opacity var(--abv-duration-fast);
+  -webkit-appearance: none;
+  -webkit-font-smoothing: auto;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: var(--abv-black);
+    border: inherit;
+    border-color: var(--abv-black);
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
+  }
+
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  &--loading,
+  &--disabled {
+    &::before {
+      display: none;
+    }
+  }
+
+  &--default {
+    color: var(--abv-button-default-color);
+    background: var(--abv-button-default-background);
+    border: var(--abv-button-border-width) solid
+    var(--abv-button-default-border-color);
+  }
+
+  &--primary {
+    color: var(--abv-button-primary-color);
+    background: var(--abv-button-primary-background);
+    border: var(--abv-button-border-width) solid
+    var(--abv-button-primary-border-color);
+  }
+
+  &--success {
+    color: var(--abv-button-success-color);
+    background: var(--abv-button-success-background);
+    border: var(--abv-button-border-width) solid
+    var(--abv-button-success-border-color);
+  }
+
+  &--danger {
+    color: var(--abv-button-danger-color);
+    background: var(--abv-button-danger-background);
+    border: var(--abv-button-border-width) solid
+    var(--abv-button-danger-border-color);
+  }
+
+  &--warning {
+    color: var(--abv-button-warning-color);
+    background: var(--abv-button-warning-background);
+    border: var(--abv-button-border-width) solid
+    var(--abv-button-warning-border-color);
+  }
+
+  &--plain {
+    background: var(--abv-button-plain-background);
+
+    &.abv-button--primary {
+      color: var(--abv-button-primary-background);
+    }
+
+    &.abv-button--success {
+      color: var(--abv-button-success-background);
+    }
+
+    &.abv-button--danger {
+      color: var(--abv-button-danger-background);
+    }
+
+    &.abv-button--warning {
+      color: var(--abv-button-warning-background);
+    }
+  }
+
+  &--large {
+    width: 100%;
+    height: var(--abv-button-large-height);
+  }
+
+  &--normal {
+    padding: var(--abv-button-normal-padding);
+    font-size: var(--abv-button-normal-font-size);
+  }
+
+  &--small {
+    height: var(--abv-button-small-height);
+    padding: var(--abv-button-small-padding);
+    font-size: var(--abv-button-small-font-size);
+  }
+
+  &__loading {
+    color: inherit;
+    font-size: inherit;
+
+    .abv-loading__spinner {
+      color: currentColor;
+      width: var(--abv-button-loading-icon-size);
+      height: var(--abv-button-loading-icon-size);
+    }
+  }
+
+  &--mini {
+    height: var(--abv-button-mini-height);
+    padding: var(--abv-button-mini-padding);
+    font-size: var(--abv-button-mini-font-size);
+
+    & + .abv-button--mini {
+      margin-left: var(--abv-padding-base);
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: var(--abv-button-disabled-opacity);
+  }
+
+  &--loading {
+    cursor: default;
+  }
+
+  &--round {
+    border-radius: var(--abv-button-round-radius);
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  // align-items are ignored when flex container is a button in legacy safari
+  // see: https://bugs.webkit.org/show_bug.cgi?id=169700
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    // fix icon vertical align
+    // see: https://github.com/youzan/abvt/issues/7617
+    &::before {
+      content: ' ';
+    }
+  }
+
+  &__icon {
+    font-size: var(--abv-button-icon-size);
+    line-height: inherit;
+  }
+
+  &__icon + &__text,
+  &__loading + &__text,
+  &__text + &__icon,
+  &__text + &__loading {
+    margin-left: var(--abv-padding-base);
+  }
+
+  &--hairline {
+    border-width: 0;
+
+    &::after {
+      border-color: inherit;
+      border-radius: calc(var(--abv-button-radius) * 2);
+    }
+
+    &.abv-button--round::after {
+      border-radius: var(--abv-button-round-radius);
+    }
+
+    &.abv-button--square::after {
+      border-radius: 0;
+    }
+  }
+}

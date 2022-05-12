@@ -59,7 +59,6 @@ export default defineComponent({
     const onTouchEnd = (event: TouchEvent) => {
       if (active.value) {
         // eliminate tap delay on safari
-        // see: https://github.com/youzan/vant/issues/6836
         if (!slots.default) {
           preventDefault(event);
         }

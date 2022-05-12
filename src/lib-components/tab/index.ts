@@ -7,6 +7,6 @@ export type { TabProps } from './Tab';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanTab: typeof Tab;
+    AbvTab: typeof Tab;
   }
 }

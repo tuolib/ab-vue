@@ -8,6 +8,6 @@ export type { UploaderInstance, UploaderResultType, UploaderFileListItem } from 
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanUploader: typeof Uploader;
+    AbvUploader: typeof Uploader;
   }
 }

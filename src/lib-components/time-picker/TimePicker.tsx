@@ -47,7 +47,7 @@ export default defineComponent({
           case 'second':
             return genOptions(+props.minSecond, +props.maxSecond, type, formatter, filter);
           default:
-            throw new Error(`[Vant] DatePicker: unsupported columns type: ${type}`);
+            throw new Error(`[Abv] DatePicker: unsupported columns type: ${type}`);
         }
       }),
     );

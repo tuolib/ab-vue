@@ -1,0 +1,90 @@
+
+body {
+  --abv-toast-max-width: 70%;
+  --abv-toast-font-size: var(--abv-font-size-md);
+  --abv-toast-text-color: var(--abv-white);
+  --abv-toast-loading-icon-color: var(--abv-white);
+  --abv-toast-line-height: var(--abv-line-height-md);
+  --abv-toast-radius: var(--abv-radius-lg);
+  --abv-toast-background: rgba(0, 0, 0, 0.7);
+  --abv-toast-icon-size: 36px;
+  --abv-toast-text-min-width: 96px;
+  --abv-toast-text-padding: var(--abv-padding-xs) var(--abv-padding-sm);
+  --abv-toast-default-padding: var(--abv-padding-md);
+  --abv-toast-default-width: 88px;
+  --abv-toast-default-min-height: 88px;
+  --abv-toast-position-top-distance: 20%;
+  --abv-toast-position-bottom-distance: 20%;
+}
+
+.abv-toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  transition: all var(--abv-duration-fast);
+
+  // hack for avoid max-width when use left & fixed
+  width: var(--abv-toast-default-width);
+  max-width: var(--abv-toast-max-width);
+  min-height: var(--abv-toast-default-min-height);
+  padding: var(--abv-toast-default-padding);
+  color: var(--abv-toast-text-color);
+  font-size: var(--abv-toast-font-size);
+  line-height: var(--abv-toast-line-height);
+
+  // allow newline character
+  white-space: pre-wrap;
+  text-align: center;
+  // https://github.com/youzan/abvt/issues/8959
+  word-break: break-all;
+  background: var(--abv-toast-background);
+  border-radius: var(--abv-toast-radius);
+
+  &--unclickable {
+    // lock scroll
+    overflow: hidden;
+    cursor: not-allowed;
+
+    // should not add pointer-events: none directly to body tag
+    // that will cause unexpected tap-highlight-color in mobile safari
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &--text,
+  &--html {
+    width: fit-content;
+    min-width: var(--abv-toast-text-min-width);
+    min-height: 0;
+    padding: var(--abv-toast-text-padding);
+
+    .abv-toast__text {
+      margin-top: 0;
+    }
+  }
+
+  &--top {
+    top: var(--abv-toast-position-top-distance);
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: var(--abv-toast-position-bottom-distance);
+  }
+
+  &__icon {
+    font-size: var(--abv-toast-icon-size);
+  }
+
+  &__loading {
+    padding: var(--abv-padding-base);
+    color: var(--abv-toast-loading-icon-color);
+  }
+
+  &__text {
+    margin-top: var(--abv-padding-xs);
+  }
+}

@@ -157,7 +157,6 @@ export default defineComponent({
         check();
       } else {
         // LazyLoad may trigger loaded event before Image mounted
-        // https://github.com/youzan/vant/issues/10046
         nextTick(check);
       }
     };

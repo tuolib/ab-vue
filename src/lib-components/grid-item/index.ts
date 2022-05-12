@@ -7,6 +7,6 @@ export type { GridItemProps } from './GridItem';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanGridItem: typeof GridItem;
+    AbvGridItem: typeof GridItem;
   }
 }

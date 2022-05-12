@@ -82,7 +82,7 @@ export default (lazyManager) => ({
           !lazyManager.options.silent
         ) {
           console.log(
-            `[@vant/lazyload] ${this.options.src} tried too more than ${this.options.attempt} times`
+            `[@Abv/lazyload] ${this.options.src} tried too more than ${this.options.attempt} times`
           );
         }
 

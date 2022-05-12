@@ -6,6 +6,6 @@ export default Step;
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanStep: typeof Step;
+    AbvStep: typeof Step;
   }
 }

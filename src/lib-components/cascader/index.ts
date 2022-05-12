@@ -8,6 +8,6 @@ export type { CascaderOption, CascaderFieldNames } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanCascader: typeof Cascader;
+    AbvCascader: typeof Cascader;
   }
 }

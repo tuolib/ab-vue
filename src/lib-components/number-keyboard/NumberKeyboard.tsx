@@ -254,7 +254,7 @@ export default defineComponent({
     return () => {
       const Title = renderTitle();
       const Content = (
-        <Transition name={props.transition ? 'van-slide-up' : ''}>
+        <Transition name={props.transition ? 'abv-slide-up' : ''}>
           <div
             v-show={props.show}
             ref={root}

@@ -8,6 +8,6 @@ export type { CheckboxShape, CheckboxInstance, CheckboxLabelPosition } from './t
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanCheckbox: typeof Checkbox;
+    AbvCheckbox: typeof Checkbox;
   }
 }

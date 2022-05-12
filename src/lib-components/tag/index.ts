@@ -7,6 +7,6 @@ export type { TagSize, TagType, TagProps } from './Tag';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanTag: typeof Tag;
+    AbvTag: typeof Tag;
   }
 }

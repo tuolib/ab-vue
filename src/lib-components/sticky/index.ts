@@ -7,6 +7,6 @@ export type { StickyProps, StickyPosition } from './Sticky';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanSticky: typeof Sticky;
+    AbvSticky: typeof Sticky;
   }
 }

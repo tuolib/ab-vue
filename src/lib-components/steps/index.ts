@@ -7,6 +7,6 @@ export type { StepsProps, StepsDirection } from './Steps';
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanSteps: typeof Steps;
+    AbvSteps: typeof Steps;
   }
 }

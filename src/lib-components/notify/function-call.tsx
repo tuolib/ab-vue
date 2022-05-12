@@ -2,7 +2,7 @@ import { App } from 'vue';
 import { extend, isObject, inBrowser, type ComponentInstance } from '../utils';
 import { withInstall } from '../utils/with-install';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanNotify from './Notify';
+import AbvNotify from './Notify';
 import type { NotifyMessage, NotifyOptions } from './types';
 
 let timer: number;
@@ -15,7 +15,7 @@ function initInstance() {
   ({ instance } = mountComponent({
     setup() {
       const { state, toggle } = usePopupState();
-      return () => <VanNotify {...state} onUpdate:show={toggle} />;
+      return () => <AbvNotify {...state} onUpdate:show={toggle} />;
     },
   }));
 }
@@ -71,7 +71,7 @@ Notify.resetDefaultOptions = () => {
   Notify.currentOptions = getDefaultOptions();
 };
 
-Notify.Component = withInstall(VanNotify);
+Notify.Component = withInstall(AbvNotify);
 
 Notify.install = (app: App) => {
   app.use(Notify.Component);

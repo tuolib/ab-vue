@@ -119,7 +119,7 @@ export default defineComponent({
           <div
             ref={contentRef}
             style={style}
-            class={[bem('content'), { 'van-ellipsis': ellipsis }]}
+            class={[bem('content'), { 'abv-ellipsis': ellipsis }]}
             onTransitionend={onTransitionEnd}
           >
             {slots.default ? slots.default() : props.text}

@@ -82,7 +82,7 @@ export default defineComponent({
     };
 
     return () => (
-      <Transition name={props.closeable ? 'van-fade' : undefined}>
+      <Transition name={props.closeable ? 'abv-fade' : undefined}>
         {props.show ? renderTag() : null}
       </Transition>
     );
