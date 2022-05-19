@@ -46,6 +46,7 @@ const circleProps = {
   currentRate: makeNumberProp(0),
   strokeWidth: makeNumericProp(40),
   // @ts-ignore
+  // eslint-disable-next-line no-undef
   strokeLinecap: String as PropType<CanvasLineCap>,
   startPosition: makeStringProp<CircleStartPosition>('top'),
 };
@@ -65,7 +66,8 @@ export default defineComponent({
     const viewBoxSize = computed(() => +props.strokeWidth + 1000);
 
     const path = computed(() => getPath(props.clockwise, viewBoxSize.value));
-
+    // @ts-ignore
+    // eslint-disable-next-line vue/return-in-computed-property
     const svgStyle = computed(() => {
       const ROTATE_ANGLE_MAP: Record<CircleStartPosition, number> = {
         top: 0,

@@ -47,6 +47,7 @@ export { default as TimePicker } from './time-picker';
 export { default as Uploader } from './uploader';
 export { default as Notify } from './notify';
 export { default as Collapse } from './collapse';
+export { default as CollapseItem } from './collapse-item';
 export { default as CountDown } from './count-down';
 export { default as Divider } from './divider';
 export { default as Image } from './image';

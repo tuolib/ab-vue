@@ -1,5 +1,5 @@
 import Locale from '../locale';
-import enUS from '../locale/lang/en-US';
+// import enUS from '../locale/lang/en-US';
 import { camelize, createTranslate } from './index';
 import type { App } from 'vue';
 // import type { Router } from 'vue-router';
@@ -12,9 +12,9 @@ declare global {
 }
 
 export function initDemoLocale() {
-  Locale.add({
-    'en-US': enUS,
-  });
+  // Locale.add({
+  //   'en-US': enUS,
+  // });
 
   // switch lang after routing
   // if (window.vueRouter) {

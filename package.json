@@ -1,6 +1,6 @@
 {
   "name": "ab-vue",
-  "version": "0.0.53",
+  "version": "0.0.55",
   "description": "",
   "license": "ISC",
   "main": "dist/cjs/entry.js",
@@ -37,7 +37,7 @@
     "*.less"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve --port 1000 dev/serve.ts",
+    "serve": "vue-cli-service serve --port 1025 dev/serve.ts",
     "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js && cpx \"src/lib-components/**/*.{css,less}\" dist/es/lib-components && cpx \"src/lib-components/**/style/index.js\" dist/es/lib-components  && cpx \"src/lib-components/**/*.{css,less}\" dist/cjs/lib-components && cpx \"src/lib-components/**/style/index.js\" dist/cjs/lib-components",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
