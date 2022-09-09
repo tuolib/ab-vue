@@ -1,4 +1,4 @@
-import "../../style/base.less";
-import "../../radio-group/index.less";
-import "../../checkbox/index.less";
-import "../index.less";
+import "../../style/base.css";
+import "../../radio-group/index.css";
+import "../../checkbox/index.css";
+import "../index.css";

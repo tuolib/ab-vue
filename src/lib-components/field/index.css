@@ -1,0 +1,157 @@
+body {
+  --abv-field-label-width: 6.2em;
+  --abv-field-label-color: var(--abv-text-color);
+  --abv-field-label-margin-right: var(--abv-padding-sm);
+  --abv-field-input-text-color: var(--abv-text-color);
+  --abv-field-input-error-text-color: var(--abv-danger-color);
+  --abv-field-input-disabled-text-color: var(--abv-text-color-3);
+  --abv-field-placeholder-text-color: var(--abv-text-color-3);
+  --abv-field-icon-size: 16px;
+  --abv-field-clear-icon-size: 16px;
+  --abv-field-clear-icon-color: var(--abv-gray-5);
+  --abv-field-right-icon-color: var(--abv-gray-6);
+  --abv-field-error-message-color: var(--abv-danger-color);
+  --abv-field-error-message-font-size: 12px;
+  --abv-field-text-area-min-height: 60px;
+  --abv-field-word-limit-color: var(--abv-gray-7);
+  --abv-field-word-limit-font-size: var(--abv-font-size-sm);
+  --abv-field-word-limit-line-height: 16px;
+  --abv-field-disabled-text-color: var(--abv-text-color-3);
+  --abv-field-required-mark-color: var(--abv-red);
+}
+.abv-field__label {
+  flex: none;
+  box-sizing: border-box;
+  width: var(--abv-field-label-width);
+  margin-right: var(--abv-field-label-margin-right);
+  color: var(--abv-field-label-color);
+  text-align: left;
+  word-wrap: break-word;
+}
+.abv-field__label--center {
+  text-align: center;
+}
+.abv-field__label--right {
+  text-align: right;
+}
+.abv-field__label--required::before {
+  margin-right: 2px;
+  color: var(--abv-field-required-mark-color);
+  content: '*';
+}
+.abv-field--disabled .abv-field__label {
+  color: var(--abv-field-disabled-text-color);
+}
+.abv-field__value {
+  overflow: visible;
+}
+.abv-field__body {
+  display: flex;
+  align-items: center;
+}
+.abv-field__control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--abv-field-input-text-color);
+  line-height: inherit;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  user-select: auto;
+}
+.abv-field__control::placeholder {
+  color: var(--abv-field-placeholder-text-color);
+}
+.abv-field__control:disabled {
+  color: var(--abv-field-input-disabled-text-color);
+  cursor: not-allowed;
+  opacity: 1;
+  -webkit-text-fill-color: var(--abv-field-input-disabled-text-color);
+}
+.abv-field__control:read-only {
+  cursor: default;
+}
+.abv-field__control--center {
+  justify-content: center;
+  text-align: center;
+}
+.abv-field__control--right {
+  justify-content: flex-end;
+  text-align: right;
+}
+.abv-field__control--custom {
+  display: flex;
+  align-items: center;
+  min-height: var(--abv-cell-line-height);
+}
+.abv-field__control--error,
+.abv-field__control--error::placeholder {
+  color: var(--abv-field-input-error-text-color);
+  -webkit-text-fill-color: currentColor;
+}
+.abv-field__control--min-height {
+  min-height: var(--abv-field-text-area-min-height);
+}
+.abv-field__control[type='date'],
+.abv-field__control[type='time'],
+.abv-field__control[type='datetime-local'] {
+  min-height: var(--abv-cell-line-height);
+}
+.abv-field__control[type='search'] {
+  -webkit-appearance: none;
+}
+.abv-field__clear,
+.abv-field__icon,
+.abv-field__button,
+.abv-field__right-icon {
+  flex-shrink: 0;
+}
+.abv-field__clear,
+.abv-field__right-icon {
+  margin-right: calc(var(--abv-padding-xs) * -1);
+  padding: 0 var(--abv-padding-xs);
+  line-height: inherit;
+}
+.abv-field__clear {
+  color: var(--abv-field-clear-icon-color);
+  font-size: var(--abv-field-clear-icon-size);
+  cursor: pointer;
+}
+.abv-field__left-icon .abv-icon,
+.abv-field__right-icon .abv-icon {
+  display: block;
+  font-size: var(--abv-field-icon-size);
+  line-height: inherit;
+}
+.abv-field__left-icon {
+  margin-right: var(--abv-padding-base);
+}
+.abv-field__right-icon {
+  color: var(--abv-field-right-icon-color);
+}
+.abv-field__button {
+  padding-left: var(--abv-padding-xs);
+}
+.abv-field__error-message {
+  color: var(--abv-field-error-message-color);
+  font-size: var(--abv-field-error-message-font-size);
+  text-align: left;
+}
+.abv-field__error-message--center {
+  text-align: center;
+}
+.abv-field__error-message--right {
+  text-align: right;
+}
+.abv-field__word-limit {
+  margin-top: var(--abv-padding-base);
+  color: var(--abv-field-word-limit-color);
+  font-size: var(--abv-field-word-limit-font-size);
+  line-height: var(--abv-field-word-limit-line-height);
+  text-align: right;
+}

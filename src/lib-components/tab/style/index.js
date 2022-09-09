@@ -1,7 +1,7 @@
-import "../../style/base.less";
+import "../../style/base.css";
 // import "../../badge/index.css";
-import "../../sticky/index.less";
-import "../../swipe/index.less";
-import "../../swipe-item/index.less";
-import "../../tabs/index.less";
-import "../index.less";
+import "../../sticky/index.css";
+import "../../swipe/index.css";
+import "../../swipe-item/index.css";
+import "../../tabs/index.css";
+import "../index.css";

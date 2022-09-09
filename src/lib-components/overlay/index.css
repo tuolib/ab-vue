@@ -1,0 +1,13 @@
+body {
+  --abv-overlay-z-index: 1;
+  --abv-overlay-background: rgba(0, 0, 0, 0.7);
+}
+.abv-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--abv-overlay-z-index);
+  width: 100%;
+  height: 100%;
+  background: var(--abv-overlay-background);
+}

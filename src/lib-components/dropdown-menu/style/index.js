@@ -1,2 +1,2 @@
-import "../../style/base.less";
-import "../index.less";
+import "../../style/base.css";
+import "../index.css";

@@ -1,0 +1,72 @@
+body {
+  --abv-toast-max-width: 70%;
+  --abv-toast-font-size: var(--abv-font-size-md);
+  --abv-toast-text-color: var(--abv-white);
+  --abv-toast-loading-icon-color: var(--abv-white);
+  --abv-toast-line-height: var(--abv-line-height-md);
+  --abv-toast-radius: var(--abv-radius-lg);
+  --abv-toast-background: rgba(0, 0, 0, 0.7);
+  --abv-toast-icon-size: 36px;
+  --abv-toast-text-min-width: 96px;
+  --abv-toast-text-padding: var(--abv-padding-xs) var(--abv-padding-sm);
+  --abv-toast-default-padding: var(--abv-padding-md);
+  --abv-toast-default-width: 88px;
+  --abv-toast-default-min-height: 88px;
+  --abv-toast-position-top-distance: 20%;
+  --abv-toast-position-bottom-distance: 20%;
+}
+.abv-toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  transition: all var(--abv-duration-fast);
+  width: var(--abv-toast-default-width);
+  max-width: var(--abv-toast-max-width);
+  min-height: var(--abv-toast-default-min-height);
+  padding: var(--abv-toast-default-padding);
+  color: var(--abv-toast-text-color);
+  font-size: var(--abv-toast-font-size);
+  line-height: var(--abv-toast-line-height);
+  white-space: pre-wrap;
+  text-align: center;
+  word-break: break-all;
+  background: var(--abv-toast-background);
+  border-radius: var(--abv-toast-radius);
+}
+.abv-toast--unclickable {
+  overflow: hidden;
+  cursor: not-allowed;
+}
+.abv-toast--unclickable * {
+  pointer-events: none;
+}
+.abv-toast--text,
+.abv-toast--html {
+  width: fit-content;
+  min-width: var(--abv-toast-text-min-width);
+  min-height: 0;
+  padding: var(--abv-toast-text-padding);
+}
+.abv-toast--text .abv-toast__text,
+.abv-toast--html .abv-toast__text {
+  margin-top: 0;
+}
+.abv-toast--top {
+  top: var(--abv-toast-position-top-distance);
+}
+.abv-toast--bottom {
+  top: auto;
+  bottom: var(--abv-toast-position-bottom-distance);
+}
+.abv-toast__icon {
+  font-size: var(--abv-toast-icon-size);
+}
+.abv-toast__loading {
+  padding: var(--abv-padding-base);
+  color: var(--abv-toast-loading-icon-color);
+}
+.abv-toast__text {
+  margin-top: var(--abv-padding-xs);
+}

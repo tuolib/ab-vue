@@ -1,0 +1,22 @@
+body {
+  --abv-list-text-color: var(--abv-text-color-2);
+  --abv-list-text-font-size: var(--abv-font-size-md);
+  --abv-list-text-line-height: 50px;
+  --abv-list-loading-icon-size: 16px;
+}
+.abv-list__loading,
+.abv-list__finished-text,
+.abv-list__error-text {
+  color: var(--abv-list-text-color);
+  font-size: var(--abv-list-text-font-size);
+  line-height: var(--abv-list-text-line-height);
+  text-align: center;
+}
+.abv-list__placeholder {
+  height: 0;
+  pointer-events: none;
+}
+.abv-list__loading-icon .abv-loading__spinner {
+  width: var(--abv-list-loading-icon-size);
+  height: var(--abv-list-loading-icon-size);
+}

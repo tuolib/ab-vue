@@ -1,0 +1,10 @@
+.abv-tab__panel,
+.abv-tab__panel-wrapper {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+.abv-tab__panel-wrapper--inactive {
+  height: 0;
+  overflow: visible;
+}

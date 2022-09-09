@@ -1,0 +1,75 @@
+body {
+  --abv-cascader-header-height: 48px;
+  --abv-cascader-header-padding: 0 var(--abv-padding-md);
+  --abv-cascader-title-font-size: var(--abv-font-size-lg);
+  --abv-cascader-title-line-height: 20px;
+  --abv-cascader-close-icon-size: 22px;
+  --abv-cascader-close-icon-color: var(--abv-gray-5);
+  --abv-cascader-selected-icon-size: 18px;
+  --abv-cascader-tabs-height: 48px;
+  --abv-cascader-active-color: var(--abv-primary-color);
+  --abv-cascader-options-height: 384px;
+  --abv-cascader-option-disabled-color: var(--abv-text-color-3);
+  --abv-cascader-tab-color: var(--abv-text-color);
+  --abv-cascader-unselected-tab-color: var(--abv-text-color-2);
+}
+.abv-cascader__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--abv-cascader-header-height);
+  padding: var(--abv-cascader-header-padding);
+}
+.abv-cascader__title {
+  font-weight: var(--abv-font-bold);
+  font-size: var(--abv-cascader-title-font-size);
+  line-height: var(--abv-cascader-title-line-height);
+}
+.abv-cascader__close-icon {
+  color: var(--abv-cascader-close-icon-color);
+  font-size: var(--abv-cascader-close-icon-size);
+}
+.abv-cascader__tabs.abv-tabs--line .abv-tabs__wrap {
+  height: var(--abv-cascader-tabs-height);
+}
+.abv-cascader__tab {
+  color: var(--abv-cascader-tab-color);
+  font-weight: var(--abv-font-bold);
+}
+.abv-cascader__tab--unselected {
+  color: var(--abv-cascader-unselected-tab-color);
+  font-weight: normal;
+}
+.abv-cascader__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px var(--abv-padding-md);
+  font-size: var(--abv-font-size-md);
+  line-height: var(--abv-line-height-md);
+  cursor: pointer;
+}
+.abv-cascader__option:active {
+  background-color: var(--abv-active-color);
+}
+.abv-cascader__option--selected {
+  color: var(--abv-cascader-active-color);
+  font-weight: var(--abv-font-bold);
+}
+.abv-cascader__option--disabled {
+  color: var(--abv-cascader-option-disabled-color);
+  cursor: not-allowed;
+}
+.abv-cascader__option--disabled:active {
+  background-color: transparent;
+}
+.abv-cascader__selected-icon {
+  font-size: var(--abv-cascader-selected-icon-size);
+}
+.abv-cascader__options {
+  box-sizing: border-box;
+  height: var(--abv-cascader-options-height);
+  padding-top: 6px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

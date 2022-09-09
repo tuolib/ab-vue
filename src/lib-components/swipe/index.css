@@ -1,0 +1,54 @@
+body {
+  --abv-swipe-indicator-size: 6px;
+  --abv-swipe-indicator-margin: var(--abv-padding-sm);
+  --abv-swipe-indicator-active-opacity: 1;
+  --abv-swipe-indicator-inactive-opacity: 0.3;
+  --abv-swipe-indicator-active-background: var(--abv-primary-color);
+  --abv-swipe-indicator-inactive-background: var(--abv-border-color);
+}
+.abv-swipe {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  cursor: grab;
+  user-select: none;
+}
+.abv-swipe__track {
+  display: flex;
+  height: 100%;
+}
+.abv-swipe__track--vertical {
+  flex-direction: column;
+}
+.abv-swipe__indicators {
+  position: absolute;
+  bottom: var(--abv-swipe-indicator-margin);
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+}
+.abv-swipe__indicators--vertical {
+  top: 50%;
+  bottom: auto;
+  left: var(--abv-swipe-indicator-margin);
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.abv-swipe__indicators--vertical .abv-swipe__indicator:not(:last-child) {
+  margin-bottom: var(--abv-swipe-indicator-size);
+}
+.abv-swipe__indicator {
+  width: var(--abv-swipe-indicator-size);
+  height: var(--abv-swipe-indicator-size);
+  background-color: var(--abv-swipe-indicator-inactive-background);
+  border-radius: 100%;
+  opacity: var(--abv-swipe-indicator-inactive-opacity);
+  transition: opacity var(--abv-duration-fast), background-color var(--abv-duration-fast);
+}
+.abv-swipe__indicator:not(:last-child) {
+  margin-right: var(--abv-swipe-indicator-size);
+}
+.abv-swipe__indicator--active {
+  background-color: var(--abv-swipe-indicator-active-background);
+  opacity: var(--abv-swipe-indicator-active-opacity);
+}

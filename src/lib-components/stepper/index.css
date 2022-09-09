@@ -1,0 +1,115 @@
+body {
+  --abv-stepper-background: var(--abv-active-color);
+  --abv-stepper-button-icon-color: var(--abv-text-color);
+  --abv-stepper-button-disabled-color: var(--abv-background);
+  --abv-stepper-button-disabled-icon-color: var(--abv-gray-5);
+  --abv-stepper-button-round-theme-color: var(--abv-primary-color);
+  --abv-stepper-input-width: 32px;
+  --abv-stepper-input-height: 28px;
+  --abv-stepper-input-font-size: var(--abv-font-size-md);
+  --abv-stepper-input-line-height: normal;
+  --abv-stepper-input-text-color: var(--abv-text-color);
+  --abv-stepper-input-disabled-text-color: var(--abv-text-color-3);
+  --abv-stepper-input-disabled-background: var(--abv-active-color);
+  --abv-stepper-radius: var(--abv-radius-md);
+}
+.abv-stepper {
+  display: inline-block;
+  user-select: none;
+}
+.abv-stepper__minus,
+.abv-stepper__plus {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--abv-stepper-input-height);
+  height: var(--abv-stepper-input-height);
+  margin: 0;
+  padding: 0;
+  color: var(--abv-stepper-button-icon-color);
+  vertical-align: middle;
+  background: var(--abv-stepper-background);
+  border: 0;
+}
+.abv-stepper__minus::before,
+.abv-stepper__plus::before {
+  width: 50%;
+  height: 1px;
+}
+.abv-stepper__minus::after,
+.abv-stepper__plus::after {
+  width: 1px;
+  height: 50%;
+}
+.abv-stepper__minus::before,
+.abv-stepper__plus::before,
+.abv-stepper__minus::after,
+.abv-stepper__plus::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+  content: '';
+}
+.abv-stepper__minus--disabled,
+.abv-stepper__plus--disabled {
+  color: var(--abv-stepper-button-disabled-icon-color);
+  background-color: var(--abv-stepper-button-disabled-color);
+  cursor: not-allowed;
+}
+.abv-stepper__minus {
+  border-radius: var(--abv-stepper-radius) 0 0 var(--abv-stepper-radius);
+}
+.abv-stepper__minus::after {
+  display: none;
+}
+.abv-stepper__plus {
+  border-radius: 0 var(--abv-stepper-radius) var(--abv-stepper-radius) 0;
+}
+.abv-stepper__input {
+  box-sizing: border-box;
+  width: var(--abv-stepper-input-width);
+  height: var(--abv-stepper-input-height);
+  margin: 0 2px;
+  padding: 0;
+  color: var(--abv-stepper-input-text-color);
+  font-size: var(--abv-stepper-input-font-size);
+  line-height: var(--abv-stepper-input-line-height);
+  text-align: center;
+  vertical-align: middle;
+  background: var(--abv-stepper-background);
+  border: 0;
+  border-width: 1px 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.abv-stepper__input:disabled {
+  color: var(--abv-stepper-input-disabled-text-color);
+  background-color: var(--abv-stepper-input-disabled-background);
+  -webkit-text-fill-color: var(--abv-stepper-input-disabled-text-color);
+  opacity: 1;
+}
+.abv-stepper__input:read-only {
+  cursor: default;
+}
+.abv-stepper--round .abv-stepper__input {
+  background-color: transparent;
+}
+.abv-stepper--round .abv-stepper__plus,
+.abv-stepper--round .abv-stepper__minus {
+  border-radius: 100%;
+}
+.abv-stepper--round .abv-stepper__plus--disabled,
+.abv-stepper--round .abv-stepper__minus--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.abv-stepper--round .abv-stepper__plus {
+  color: var(--abv-white);
+  background: var(--abv-stepper-button-round-theme-color);
+}
+.abv-stepper--round .abv-stepper__minus {
+  color: var(--abv-stepper-button-round-theme-color);
+  background-color: var(--abv-background-2);
+  border: 1px solid var(--abv-stepper-button-round-theme-color);
+}

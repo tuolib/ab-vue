@@ -1,3 +1,3 @@
-import "../../style/base.less";
-import "../../loading/index.less";
-import "../../picker/index.less";
+import "../../style/base.css";
+import "../../loading/index.css";
+import "../../picker/index.css";

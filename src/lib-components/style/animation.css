@@ -1,0 +1,94 @@
+@keyframes abv-slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes abv-slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes abv-slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes abv-slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes abv-slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes abv-slide-left-leave {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes abv-slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes abv-slide-right-leave {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes abv-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes abv-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes abv-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.abv-fade-enter-active {
+  animation: var(--abv-duration-base) abv-fade-in both var(--abv-ease-out);
+}
+.abv-fade-leave-active {
+  animation: var(--abv-duration-base) abv-fade-out both var(--abv-ease-in);
+}
+.abv-slide-up-enter-active {
+  animation: abv-slide-up-enter var(--abv-duration-base) both var(--abv-ease-out);
+}
+.abv-slide-up-leave-active {
+  animation: abv-slide-up-leave var(--abv-duration-base) both var(--abv-ease-in);
+}
+.abv-slide-down-enter-active {
+  animation: abv-slide-down-enter var(--abv-duration-base) both var(--abv-ease-out);
+}
+.abv-slide-down-leave-active {
+  animation: abv-slide-down-leave var(--abv-duration-base) both var(--abv-ease-in);
+}
+.abv-slide-left-enter-active {
+  animation: abv-slide-left-enter var(--abv-duration-base) both var(--abv-ease-out);
+}
+.abv-slide-left-leave-active {
+  animation: abv-slide-left-leave var(--abv-duration-base) both var(--abv-ease-in);
+}
+.abv-slide-right-enter-active {
+  animation: abv-slide-right-enter var(--abv-duration-base) both var(--abv-ease-out);
+}
+.abv-slide-right-leave-active {
+  animation: abv-slide-right-leave var(--abv-duration-base) both var(--abv-ease-in);
+}

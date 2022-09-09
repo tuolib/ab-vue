@@ -1,0 +1,76 @@
+body {
+  --abv-radio-size: 20px;
+  --abv-radio-border-color: var(--abv-gray-5);
+  --abv-radio-duration: var(--abv-duration-fast);
+  --abv-radio-label-margin: var(--abv-padding-xs);
+  --abv-radio-label-color: var(--abv-text-color);
+  --abv-radio-checked-icon-color: var(--abv-primary-color);
+  --abv-radio-disabled-icon-color: var(--abv-gray-5);
+  --abv-radio-disabled-label-color: var(--abv-text-color-3);
+  --abv-radio-disabled-background: var(--abv-border-color);
+}
+.abv-radio {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+.abv-radio--disabled {
+  cursor: not-allowed;
+}
+.abv-radio--label-disabled {
+  cursor: default;
+}
+.abv-radio--horizontal {
+  margin-right: var(--abv-padding-sm);
+}
+.abv-radio__icon {
+  flex: none;
+  height: 1em;
+  font-size: var(--abv-radio-size);
+  line-height: 1em;
+  cursor: pointer;
+}
+.abv-radio__icon .abv-icon {
+  display: block;
+  box-sizing: border-box;
+  width: 1.25em;
+  height: 1.25em;
+  color: transparent;
+  font-size: 0.8em;
+  line-height: 1.25;
+  text-align: center;
+  border: 1px solid var(--abv-radio-border-color);
+  transition-duration: var(--abv-radio-duration);
+  transition-property: color, border-color, background-color;
+}
+.abv-radio__icon--round .abv-icon {
+  border-radius: 100%;
+}
+.abv-radio__icon--checked .abv-icon {
+  color: var(--abv-white);
+  background-color: var(--abv-radio-checked-icon-color);
+  border-color: var(--abv-radio-checked-icon-color);
+}
+.abv-radio__icon--disabled {
+  cursor: not-allowed;
+}
+.abv-radio__icon--disabled .abv-icon {
+  background-color: var(--abv-radio-disabled-background);
+  border-color: var(--abv-radio-disabled-icon-color);
+}
+.abv-radio__icon--disabled.abv-radio__icon--checked .abv-icon {
+  color: var(--abv-radio-disabled-icon-color);
+}
+.abv-radio__label {
+  margin-left: var(--abv-radio-label-margin);
+  color: var(--abv-radio-label-color);
+  line-height: var(--abv-radio-size);
+}
+.abv-radio__label--left {
+  margin: 0 var(--abv-radio-label-margin) 0 0;
+}
+.abv-radio__label--disabled {
+  color: var(--abv-radio-disabled-label-color);
+}

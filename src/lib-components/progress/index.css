@@ -1,0 +1,48 @@
+body {
+  --abv-progress-height: 4px;
+  --abv-progress-color: var(--abv-primary-color);
+  --abv-progress-inactive-color: var(--abv-gray-5);
+  --abv-progress-background: var(--abv-gray-3);
+  --abv-progress-pivot-padding: 0 5px;
+  --abv-progress-pivot-text-color: var(--abv-white);
+  --abv-progress-pivot-font-size: var(--abv-font-size-xs);
+  --abv-progress-pivot-line-height: 1.6;
+  --abv-progress-pivot-background: var(--abv-primary-color);
+}
+.abv-progress {
+  position: relative;
+  height: var(--abv-progress-height);
+  background: var(--abv-progress-background);
+  border-radius: var(--abv-progress-height);
+}
+.abv-progress__portion {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--abv-progress-color);
+  border-radius: inherit;
+  transform-origin: 0;
+  transition: all var(--abv-duration-base) var(--abv-ease-out);
+}
+.abv-progress__portion--inactive {
+  background: var(--abv-progress-inactive-color);
+}
+.abv-progress__pivot {
+  position: absolute;
+  top: 50%;
+  box-sizing: border-box;
+  min-width: 3.6em;
+  padding: var(--abv-progress-pivot-padding);
+  color: var(--abv-progress-pivot-text-color);
+  font-size: var(--abv-progress-pivot-font-size);
+  line-height: var(--abv-progress-pivot-line-height);
+  text-align: center;
+  word-break: keep-all;
+  background: var(--abv-progress-pivot-background);
+  border-radius: 1em;
+  transition: all var(--abv-duration-base) var(--abv-ease-out);
+}
+.abv-progress__pivot--inactive {
+  background: var(--abv-progress-inactive-color);
+}

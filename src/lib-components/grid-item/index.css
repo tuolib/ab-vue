@@ -1,0 +1,76 @@
+body {
+  --abv-grid-item-content-padding: var(--abv-padding-md) var(--abv-padding-xs);
+  --abv-grid-item-content-background: var(--abv-background-2);
+  --abv-grid-item-content-active-color: var(--abv-active-color);
+  --abv-grid-item-icon-size: 28px;
+  --abv-grid-item-text-color: var(--abv-text-color);
+  --abv-grid-item-text-font-size: var(--abv-font-size-sm);
+}
+.abv-grid-item {
+  position: relative;
+  box-sizing: border-box;
+}
+.abv-grid-item--square {
+  height: 0;
+}
+.abv-grid-item__icon {
+  font-size: var(--abv-grid-item-icon-size);
+}
+.abv-grid-item__text {
+  color: var(--abv-grid-item-text-color);
+  font-size: var(--abv-grid-item-text-font-size);
+  line-height: 1.5;
+  word-break: break-all;
+}
+.abv-grid-item__icon + .abv-grid-item__text {
+  margin-top: var(--abv-padding-xs);
+}
+.abv-grid-item__content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--abv-grid-item-content-padding);
+  background: var(--abv-grid-item-content-background);
+}
+.abv-grid-item__content::after {
+  z-index: 1;
+  border-width: 0 var(--abv-border-width) var(--abv-border-width) 0;
+}
+.abv-grid-item__content--square {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.abv-grid-item__content--center {
+  align-items: center;
+  justify-content: center;
+}
+.abv-grid-item__content--horizontal {
+  flex-direction: row;
+}
+.abv-grid-item__content--horizontal .abv-grid-item__text {
+  margin: 0 0 0 var(--abv-padding-xs);
+}
+.abv-grid-item__content--reverse {
+  flex-direction: column-reverse;
+}
+.abv-grid-item__content--reverse .abv-grid-item__text {
+  margin: 0 0 var(--abv-padding-xs);
+}
+.abv-grid-item__content--horizontal.abv-grid-item__content--reverse {
+  flex-direction: row-reverse;
+}
+.abv-grid-item__content--horizontal.abv-grid-item__content--reverse .abv-grid-item__text {
+  margin: 0 var(--abv-padding-xs) 0 0;
+}
+.abv-grid-item__content--surround::after {
+  border-width: var(--abv-border-width);
+}
+.abv-grid-item__content--clickable {
+  cursor: pointer;
+}
+.abv-grid-item__content--clickable:active {
+  background-color: var(--abv-grid-item-content-active-color);
+}

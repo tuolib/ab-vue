@@ -1,4 +1,4 @@
-import "../../style/base.less";
+import "../../style/base.css";
 // import "../../badge/index.css";
 // import "../../icon/index.css";
-import "../index.less";
+import "../index.css";

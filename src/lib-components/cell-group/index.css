@@ -1,0 +1,27 @@
+body {
+  --abv-cell-group-background: var(--abv-background-2);
+  --abv-cell-group-title-color: var(--abv-text-color-2);
+  --abv-cell-group-title-padding: var(--abv-padding-md) var(--abv-padding-md);
+  --abv-cell-group-title-font-size: var(--abv-font-size-md);
+  --abv-cell-group-title-line-height: 16px;
+  --abv-cell-group-inset-padding: 0 var(--abv-padding-md);
+  --abv-cell-group-inset-radius: var(--abv-radius-lg);
+  --abv-cell-group-inset-title-padding: var(--abv-padding-md) var(--abv-padding-md);
+}
+.abv-cell-group {
+  background: var(--abv-cell-group-background);
+}
+.abv-cell-group--inset {
+  margin: var(--abv-cell-group-inset-padding);
+  border-radius: var(--abv-cell-group-inset-radius);
+  overflow: hidden;
+}
+.abv-cell-group__title {
+  padding: var(--abv-cell-group-title-padding);
+  color: var(--abv-cell-group-title-color);
+  font-size: var(--abv-cell-group-title-font-size);
+  line-height: var(--abv-cell-group-title-line-height);
+}
+.abv-cell-group__title--inset {
+  padding: var(--abv-cell-group-inset-title-padding);
+}

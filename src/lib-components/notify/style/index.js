@@ -1,4 +1,4 @@
-import "../../style/base.less";
-import "../../overlay/index.less";
-import "../../popup/index.less";
-import "../index.less";
+import "../../style/base.css";
+import "../../overlay/index.css";
+import "../../popup/index.css";
+import "../index.css";

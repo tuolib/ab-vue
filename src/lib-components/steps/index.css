@@ -1,0 +1,19 @@
+body {
+  --abv-steps-background: var(--abv-background-2);
+}
+.abv-steps {
+  overflow: hidden;
+  background-color: var(--abv-steps-background);
+}
+.abv-steps--horizontal {
+  padding: 10px 10px 0;
+}
+.abv-steps--horizontal .abv-steps__items {
+  position: relative;
+  display: flex;
+  margin: 0 0 10px;
+  padding-bottom: 22px;
+}
+.abv-steps--vertical {
+  padding: 0 0 0 var(--abv-padding-xl);
+}

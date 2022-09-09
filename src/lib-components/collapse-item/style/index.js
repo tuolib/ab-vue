@@ -1,3 +1,3 @@
-import "../../style/base.less";
-import "../../cell/index.less";
-import "../index.less";
+import "../../style/base.css";
+import "../../cell/index.css";
+import "../index.css";

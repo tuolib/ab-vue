@@ -1,0 +1,18 @@
+body {
+  --abv-tabbar-height: 50px;
+  --abv-tabbar-z-index: 1;
+  --abv-tabbar-background: var(--abv-background-2);
+}
+.abv-tabbar {
+  z-index: var(--abv-tabbar-z-index);
+  display: flex;
+  box-sizing: content-box;
+  width: 100%;
+  height: var(--abv-tabbar-height);
+  background: var(--abv-tabbar-background);
+}
+.abv-tabbar--fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

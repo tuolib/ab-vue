@@ -1,1 +1,1 @@
-import "../../style/base.less";
+import "../../style/base.css";

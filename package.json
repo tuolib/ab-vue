@@ -90,6 +90,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
     "less": "3.9.0",
     "less-loader": "5.0.0",
     "minimist": "^1.2.5",

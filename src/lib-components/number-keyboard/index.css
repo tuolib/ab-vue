@@ -1,0 +1,135 @@
+body {
+  --abv-number-keyboard-background: var(--abv-gray-2);
+  --abv-number-keyboard-key-height: 48px;
+  --abv-number-keyboard-key-font-size: 28px;
+  --abv-number-keyboard-key-active-color: var(--abv-gray-3);
+  --abv-number-keyboard-key-background: var(--abv-background-2);
+  --abv-number-keyboard-delete-font-size: var(--abv-font-size-lg);
+  --abv-number-keyboard-title-color: var(--abv-gray-7);
+  --abv-number-keyboard-title-height: 34px;
+  --abv-number-keyboard-title-font-size: var(--abv-font-size-lg);
+  --abv-number-keyboard-close-padding: 0 var(--abv-padding-md);
+  --abv-number-keyboard-close-color: var(--abv-link-color);
+  --abv-number-keyboard-close-font-size: var(--abv-font-size-md);
+  --abv-number-keyboard-button-text-color: var(--abv-white);
+  --abv-number-keyboard-button-background: var(--abv-primary-color);
+  --abv-number-keyboard-z-index: 100;
+}
+.abv-theme-dark {
+  --abv-number-keyboard-background: var(--abv-gray-8);
+  --abv-number-keyboard-key-background: var(--abv-gray-7);
+  --abv-number-keyboard-key-active-color: var(--abv-gray-6);
+}
+.abv-number-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--abv-number-keyboard-z-index);
+  width: 100%;
+  padding-bottom: 22px;
+  background: var(--abv-number-keyboard-background);
+  user-select: none;
+}
+.abv-number-keyboard--with-title {
+  border-radius: 20px 20px 0 0;
+}
+.abv-number-keyboard__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  height: var(--abv-number-keyboard-title-height);
+  padding-top: 6px;
+  color: var(--abv-number-keyboard-title-color);
+  font-size: var(--abv-number-keyboard-title-font-size);
+}
+.abv-number-keyboard__title {
+  display: inline-block;
+  font-weight: normal;
+}
+.abv-number-keyboard__title-left {
+  position: absolute;
+  left: 0;
+}
+.abv-number-keyboard__body {
+  display: flex;
+  padding: 6px 0 0 6px;
+}
+.abv-number-keyboard__keys {
+  display: flex;
+  flex: 3;
+  flex-wrap: wrap;
+}
+.abv-number-keyboard__close {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding: var(--abv-number-keyboard-close-padding);
+  color: var(--abv-number-keyboard-close-color);
+  font-size: var(--abv-number-keyboard-close-font-size);
+  background-color: transparent;
+  border: none;
+}
+.abv-number-keyboard__sidebar {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.abv-number-keyboard--unfit {
+  padding-bottom: 0;
+}
+.abv-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--abv-number-keyboard-key-height);
+  font-size: var(--abv-number-keyboard-key-font-size);
+  line-height: 1.5;
+  background: var(--abv-number-keyboard-key-background);
+  border-radius: var(--abv-radius-lg);
+  cursor: pointer;
+}
+.abv-key--large {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  bottom: 6px;
+  left: 0;
+  height: auto;
+}
+.abv-key--blue,
+.abv-key--delete {
+  font-size: var(--abv-number-keyboard-delete-font-size);
+}
+.abv-key--active {
+  background-color: var(--abv-number-keyboard-key-active-color);
+}
+.abv-key--blue {
+  color: var(--abv-number-keyboard-button-text-color);
+  background: var(--abv-number-keyboard-button-background);
+}
+.abv-key--blue.abv-key--active {
+  opacity: var(--abv-active-opacity);
+}
+.abv-key__wrapper {
+  position: relative;
+  flex: 1;
+  flex-basis: 33%;
+  box-sizing: border-box;
+  padding: 0 6px 6px 0;
+}
+.abv-key__wrapper--wider {
+  flex-basis: 66%;
+}
+.abv-key__delete-icon {
+  width: 32px;
+  height: 22px;
+}
+.abv-key__collapse-icon {
+  width: 30px;
+  height: 24px;
+}
+.abv-key__loading-icon {
+  color: var(--abv-number-keyboard-button-text-color);
+}

@@ -1,3 +1,3 @@
-import "../../style/base.less";
-import "../../steps/index.less";
-import "../index.less";
+import "../../style/base.css";
+import "../../steps/index.css";
+import "../index.css";

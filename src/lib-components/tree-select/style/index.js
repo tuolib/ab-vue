@@ -1,4 +1,4 @@
-import "../../style/base.less";
-import "../../sidebar/index.less";
-import "../../sidebar-item/index.less";
-import "../index.less";
+import "../../style/base.css";
+import "../../sidebar/index.css";
+import "../../sidebar-item/index.css";
+import "../index.css";

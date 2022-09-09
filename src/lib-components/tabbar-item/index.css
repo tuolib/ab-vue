@@ -1,0 +1,38 @@
+body {
+  --abv-tabbar-item-font-size: var(--abv-font-size-sm);
+  --abv-tabbar-item-text-color: var(--abv-text-color);
+  --abv-tabbar-item-active-color: var(--abv-primary-color);
+  --abv-tabbar-item-active-background: var(--abv-background-2);
+  --abv-tabbar-item-line-height: 1;
+  --abv-tabbar-item-icon-size: 22px;
+  --abv-tabbar-item-icon-margin-bottom: var(--abv-padding-base);
+}
+.abv-tabbar-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--abv-tabbar-item-text-color);
+  font-size: var(--abv-tabbar-item-font-size);
+  line-height: var(--abv-tabbar-item-line-height);
+  cursor: pointer;
+}
+.abv-tabbar-item__icon {
+  margin-bottom: var(--abv-tabbar-item-icon-margin-bottom);
+  font-size: var(--abv-tabbar-item-icon-size);
+}
+.abv-tabbar-item__icon .abv-icon {
+  display: block;
+}
+.abv-tabbar-item__icon .abv-badge {
+  margin-top: var(--abv-padding-base);
+}
+.abv-tabbar-item__icon img {
+  display: block;
+  height: 20px;
+}
+.abv-tabbar-item--active {
+  color: var(--abv-tabbar-item-active-color);
+  background-color: var(--abv-tabbar-item-active-background);
+}

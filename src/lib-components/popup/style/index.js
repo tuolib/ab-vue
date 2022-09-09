@@ -1,5 +1,5 @@
-import "../../style/base.less";
+import "../../style/base.css";
 // import "../../badge/index.css";
 // import "../../icon/index.css";
-import "../../overlay/index.less";
-import "../index.less";
+import "../../overlay/index.css";
+import "../index.css";
