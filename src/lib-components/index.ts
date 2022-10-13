@@ -1,6 +1,4 @@
 export { default as Sample } from './sample/ab-vue-sample.vue';
-export { default as Tip } from './tip';
-// export { default as Step } from './step';
 // new
 export { default as Tag } from './tag';
 export { default as Button } from './button';

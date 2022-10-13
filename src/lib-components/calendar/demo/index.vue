@@ -5,8 +5,8 @@ import { reactive } from 'vue';
 import { useTranslate } from '../../utils/use-translate';
 import TiledDisplay from './TiledDisplay.vue';
 import type { CalendarDayItem } from '../types';
-import '../../cell/style/index';
-import '../style/index';
+import '../../cell/style/cell';
+import '../style/calendar';
 
 const t = useTranslate({
   'zh-CN': {
